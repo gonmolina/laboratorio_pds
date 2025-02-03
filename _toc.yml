@@ -1,0 +1,7 @@
+format: jb-book
+root: index
+parts:
+  - caption: Señales Digitales
+    chapters:
+    - file: recursos/nuevo_material/senales_discretas.md
+    - file: recursos/nuevo_material/analisis_frecuencial_en_tiempo_discreto.md
