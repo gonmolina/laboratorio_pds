@@ -16,8 +16,18 @@ Si ya se cuenta con una instalación de Anaconda, entonces ya se dispone del ges
 
 ## Instalar Miniforge/Miniconda
 
-Seguir las recomendaciones por defecto dadas por el instalador. Una vez terminada la instalación tendremos Python instalado en nuestro sistema. Además tendremos en el menú de inicio un ítem
-que se llama Anaconda Powershell Prompt, el cual abriremos para continuar con la instalación de las herramientas del curso.
+Seguir las recomendaciones por defecto dadas por el instalador. 
+Durante el proceso de instalación en windows se presentarán varios un cuadros de diálogos. 
+En general es conveniente aceptar las opciones recomendadas por defecto. La mismas incluyen:  
+- Instalar miniforge solo para el usuario actual 
+- Dejar el directorio de instalación por defecto
+Cuando aparece el cuadro de dialogo de las opciones avanzadas de instalación seleccionar solo:
+- la opción de crear los atajos en el menú de inicio
+- la opción de registrar el  Python de miniforge como default para el usuario  
+Una vez terminada la instalación tendremos Python instalado en nuestro sistema. 
+Además tendremos en el menú de inicio una carpeta
+que se llama `Miniforge3` con un item dentro `Miniforge Prompt`, el cual abriremos para continuar con la instalación de las herramientas del curso.
+
 
 ## Instalación de las herramientas especificas del curso
 
@@ -41,24 +51,19 @@ Finalmente para instalar todas las herramientas necesarias en el curso debemos e
 conda env create --file dyc.yml
 ```
 
-Una vez terminado este paso tendremos instaladas todas las herramientas necesarias para la materia. Este paso puede tardar un tiempo largo dependiendo de la velocidad de conexión. Si la instalación fué exitosa encontraremos dos ítems en el menú de inicio que son los que utilizaremos:
+Una vez terminado este paso tendremos instaladas todas las herramientas necesarias para la materia. Este paso puede tardar un tiempo largo dependiendo de la velocidad de conexión.
 
-1. Spyder (dyc)
-1. Jupyter Notebooks (dyc)
+Finalmente, tendremos todas las herramientas del curso preparadas para ser utilizadas en nuestras computadoras personales.
 
-## Retoques a la herramientas para mayor comodidad de uso
+## Interfaces de programación
 
-### Jupyter Notebooks en Spyder
-
-Spyder nos proporciona un entorno de desarrollo muy parecido a  Matlab, donde tenemos paneles similares a los de Matlab:
-
-1. Panel de Comandos (command window)
-1. Explorador de variables, donde podemos ver las variables  definidas y sus valores
-1. Un editor de scripts para programar
-1. Un editor de cuadernos de Jupyter (a continuación veremos como activarlo)
-1. Una ventana de ayuda, que nos brinda rápidamente ayuda del comando que necesitemos usando las teclas `Ctrl+I`.
-1. Historial de comandos, etc.
-
-Una configuración útil en `Spyder` es tener la herramienta de los `Jupyter Notebook` en el mismo `Spyder`. Para esto abrir Spyder en `View> Panes` activar Notebooks.
-
-La mayor parte del material de este curso está escrito en formato de de Jupyter Notebooks, y puede ser descargado abierto y modificado mediante usando Spyder y el plugin de Jupyter Notebooks.
+Los cuadernos se pueden ver/ejecutar en cualquier entorno de desarrollo de python con soporte a los cuadernos de Jupyter. Los recomendados para este curso son:
+- Jupyter Lab: es un editor web que se encuentra instalado con las herramientas del curso
+- Visual Studio Code: es un editor de código abierto mantenido por Micrsoft que permite ver y ejecutar cuadernos de Jupyter. Se puede descargar muy fácilmente de la web.
+- Otras opciones:
+    - Spyder: se puede instalar mediante desde el `Miniforge Prompt` con los siguientes comandos 
+    ```bash
+    mamba activate dyc
+    mamba install spyder
+    ```
+    Este entorno de desarrollo provee una interface muy parecida a la de Matlab lo cuál es una ventaja para quien está acostumbrado a este software, pero es mucho más pesado que los anteriores.
