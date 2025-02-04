@@ -30,7 +30,7 @@ que se llama `Miniforge3` con un item dentro `Miniforge Prompt`, el cual abrirem
 
 ## Instalación de las herramientas especificas del curso
 
-Para continuar con la instalación necesitaremos descargar el archivo [dyc.yml](https://drive.google.com/file/d/1KPSj-89Q4wTa5ifQvaCoa0_ohCtBXUGf/view?usp=sharing) haciendo clock sobre el enlace anterior. Una vez descargado, dirigirse con la consola de Anaconda Powershell Prompt abierta a la carpeta de descargas donde se encuentra el archivo `dyc.yml` descargado anteriormente. En general, para dirigirse a esta carpeta debemos tipear
+Para continuar con la instalación necesitaremos descargar el archivo [dyc.yml](https://drive.google.com/file/d/1KPSj-89Q4wTa5ifQvaCoa0_ohCtBXUGf/view?usp=sharing) haciendo click sobre el enlace anterior. Una vez descargado, dirigirse con la consola de Anaconda Powershell Prompt abierta a la carpeta de descargas donde se encuentra el archivo `dyc.yml` descargado anteriormente. En general, para dirigirse a esta carpeta debemos tipear
 
 ```bash
 cd ~\Downloads\
