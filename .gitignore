@@ -1,3 +1,4 @@
 **/*.wav
 **/_build
+**/*.ipynb
 laboratorio_pds.code-workspace

@@ -66,3 +66,5 @@ Los cuadernos se pueden ver/ejecutar en cualquier entorno de desarrollo de pytho
     mamba install spyder
     ```
     Este entorno de desarrollo provee una interface muy parecida a la de Matlab lo cuál es una ventaja para quien está acostumbrado a este software, pero es mucho más pesado que los anteriores.
+    - PyCharm: Entorno profesional para desarrollo de Python que tiene una versión sin costo con algunas limitaciones.
+
