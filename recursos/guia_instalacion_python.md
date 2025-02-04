@@ -58,7 +58,7 @@ Finalmente, tendremos todas las herramientas del curso preparadas para ser utili
 
 Los cuadernos se pueden ver/ejecutar en cualquier entorno de desarrollo de python con soporte a los cuadernos de Jupyter. Los recomendados para este curso son:
 - Jupyter Lab: es un editor web que se encuentra instalado con las herramientas del curso
-- Visual Studio Code: es un editor de código abierto mantenido por Micrsoft que permite ver y ejecutar cuadernos de Jupyter. Se puede descargar muy fácilmente de la web.
+- Visual Studio Code: es un editor de código abierto mantenido por Microsoft que permite ver y ejecutar cuadernos de Jupyter. Se puede descargar muy fácilmente de la web.
 - Otras opciones:
     - Spyder: se puede instalar mediante desde el `Miniforge Prompt` con los siguientes comandos 
     ```bash
