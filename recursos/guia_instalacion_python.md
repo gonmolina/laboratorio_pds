@@ -1,20 +1,19 @@
 # Guía de instalación de las herramientas computacionales
 
-## Descargar Miniforge o Miniconda
+## Descargar Miniforge
 
-Miniforge o Miniconda son herramientas de gestión de entornos de Python.
+Miniforge es una herramientas de gestión de paquetes y entornos de Python.
 Los entornos de Python nos brindan las posibilidad de instalar todas las bibliotecas que utilicemos para nuestro propósitos particulares, en nuestro caso resolver los problemas de la materias de control, sin interferir con otras instalaciones de Python que se tengan en el sistema operativo o para otros propósitos.
 
-Los link de descargas son los siguientes:
+El link de descarga es el siguientes
 
 - [Miniforge](https://github.com/conda-forge/miniforge/releases)
-- [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
 
 Seguir el enlace de  y elegir la última versión disponible para su sistema operativo.
 
 Si ya se cuenta con una instalación de Anaconda, entonces ya se dispone del gestor de entornos utilizado, y se puede obviar tanto este paso como el siguiente.
 
-## Instalar Miniforge/Miniconda
+## Instalar Miniforge
 
 Seguir las recomendaciones por defecto dadas por el instalador. 
 Durante el proceso de instalación en windows se presentarán varios un cuadros de diálogos. 
