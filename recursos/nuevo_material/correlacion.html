@@ -68,6 +68,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'recursos/nuevo_material/correlacion';</script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Análisis frecuencial de señales en tiempo discreto" href="analisis_frecuencial_en_tiempo_discreto.html" />
+    <link rel="prev" title="Señales en tiempo discreto" href="senales_discretas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   </head>
@@ -129,8 +131,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -167,10 +167,15 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Señales Digitales</span></p>
-<ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../guia_instalacion_python.html">Guía de instalación de las herramientas computacionales</a></li>
 <li class="toctree-l1"><a class="reference internal" href="senales_discretas.html">Señales en tiempo discreto</a></li>
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Correlación en tiempo discreto</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analisis_frecuencial_en_tiempo_discreto.html">Análisis frecuencial de señales en tiempo discreto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuadernos_clases/01-sampleo_tono_puro.html">Cuaderno clase 1</a></li>
 </ul>
 
     </div>
@@ -367,7 +372,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[r_{xy}(l)=\sum_{n=-\infty}^{\infty}x(n+l)y(n), \quad l=\pm 1, \pm 2, \ldots\]</div>
 <ul class="simple">
-<li><p>El orden de los subíndices en <span class="math notranslate nohighlight">\(r_xx(l)\)</span> indica la dirección en que la primer señal es desplazada con respecto a la otra.</p></li>
+<li><p>El orden de los subíndices en <span class="math notranslate nohighlight">\(r_{xy}(l)\)</span> indica la dirección en que la primer señal es desplazada con respecto a la otra.</p></li>
 </ul>
 <p>Similarmente se definen</p>
 <div class="math notranslate nohighlight">
@@ -418,7 +423,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[r_{xx}(l)=\lim_{M\rightarrow \infty} \frac{1}{2M+1}\sum_{n=-M}^{M}x(n)x(n-l)\]</div>
 <ul class="simple">
-<li><p>En particular, si <span class="math notranslate nohighlight">\(x(n)\)</span> e <span class="math notranslate nohighlight">\(y(n)\)</span> son **señales periódicas con período <span class="math notranslate nohighlight">\(N\)</span>, estas dos últimas relaciones pueden computarse en un período.</p></li>
+<li><p>En particular, si <span class="math notranslate nohighlight">\(x(n)\)</span> e <span class="math notranslate nohighlight">\(y(n)\)</span> son <strong>señales periódicas con período <span class="math notranslate nohighlight">\(N\)</span></strong>, estas dos últimas relaciones pueden computarse en un período.</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[r_{xy}(l)=\frac{1}{N}\sum_{n=0}^{N-1}x(n)y(n-l)\]</div>
@@ -535,6 +540,24 @@ r_{xx}(l)&amp;=\sum_{n=-\infty}^{\infty}x(n+l)x(n)\\
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="senales_discretas.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Señales en tiempo discreto</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="analisis_frecuencial_en_tiempo_discreto.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Análisis frecuencial de señales en tiempo discreto</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

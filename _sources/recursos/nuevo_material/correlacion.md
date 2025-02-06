@@ -40,7 +40,7 @@ o equivalentemente
 
 $$r_{xy}(l)=\sum_{n=-\infty}^{\infty}x(n+l)y(n), \quad l=\pm 1, \pm 2, \ldots$$
 
-- El orden de los subíndices en $r_xx(l)$ indica la dirección en que la primer señal es desplazada con respecto a la otra.
+- El orden de los subíndices en $r_{xy}(l)$ indica la dirección en que la primer señal es desplazada con respecto a la otra.
 
 Similarmente se definen 
 
@@ -96,7 +96,7 @@ $$r_{xy}(l)=\lim_{M\rightarrow \infty} \frac{1}{2M+1}\sum_{n=-M}^{M}x(n)y(n-l)$$
 
 $$r_{xx}(l)=\lim_{M\rightarrow \infty} \frac{1}{2M+1}\sum_{n=-M}^{M}x(n)x(n-l)$$
 
-- En particular, si $x(n)$ e $y(n)$ son **señales periódicas con período $N$, estas dos últimas relaciones pueden computarse en un período.
+- En particular, si $x(n)$ e $y(n)$ son **señales periódicas con período $N$**, estas dos últimas relaciones pueden computarse en un período.
 
 $$r_{xy}(l)=\frac{1}{N}\sum_{n=0}^{N-1}x(n)y(n-l)$$
 
