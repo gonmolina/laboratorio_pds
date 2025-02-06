@@ -68,3 +68,21 @@ Los cuadernos se pueden ver/ejecutar en cualquier entorno de desarrollo de pytho
     Este entorno de desarrollo provee una interface muy parecida a la de Matlab lo cuál es una ventaja para quien está acostumbrado a este software, pero es mucho más pesado que los anteriores.
     - PyCharm: Entorno profesional para desarrollo de Python que tiene una versión sin costo con algunas limitaciones.
 
+## Otras herramientas necesarias/utiles
+
+### PRBS Generatos
+
+Es una paquete de Python para generar señales pseudo aleatorias binarias. Actualmente está en desarrollo, pero puede descargarse una versión de pruebas desde el repositorio de pruebas de paquetes Python. Para instalarlo en sus maquines pueden hacerlo abriendo el `Prompt Miniforge` y ejecutando:
+
+```bash
+pip install -i https://test.pypi.org/simple/ prbs-generator
+```
+
+Una vez instalado, podemos generar una onda pseudo aleatoria binaria con el siguiente código:
+
+```python
+from prbs.prbs import prbs
+signal=prbs(1000, 12)
+```
+Esto genera una señal pseudo aleatoria de dimensión 1000 con valores en multiplicidad $n.12$ con $n=1\ldots$, resultando en un espectro plano en las frecuencias $\left[0,\dfrac{F_s}{2.12}\right]$, siendo $F_s$ la frecuencia de muestro.
+

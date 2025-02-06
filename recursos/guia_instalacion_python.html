@@ -63,6 +63,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'recursos/guia_instalacion_python';</script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Búsqueda" href="../search.html" />
@@ -171,6 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="nuevo_material/correlacion.html">Correlación en tiempo discreto</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nuevo_material/analisis_frecuencial_en_tiempo_discreto.html">Análisis frecuencial de señales en tiempo discreto</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cuadernos_clases/01-sampleo_tono_puro.html">Cuaderno clase 1</a></li>
 </ul>
@@ -325,6 +328,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalar-miniforge">Instalar Miniforge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-de-las-herramientas-especificas-del-curso">Instalación de las herramientas especificas del curso</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaces-de-programacion">Interfaces de programación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-herramientas-necesarias-utiles">Otras herramientas necesarias/utiles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prbs-generatos">PRBS Generatos</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -404,6 +411,22 @@ mamba<span class="w"> </span>install<span class="w"> </span>spyder
 </li>
 </ul>
 </section>
+<section id="otras-herramientas-necesarias-utiles">
+<h2>Otras herramientas necesarias/utiles<a class="headerlink" href="#otras-herramientas-necesarias-utiles" title="Permalink to this heading">#</a></h2>
+<section id="prbs-generatos">
+<h3>PRBS Generatos<a class="headerlink" href="#prbs-generatos" title="Permalink to this heading">#</a></h3>
+<p>Es una paquete de Python para generar señales pseudo aleatorias binarias. Actualmente está en desarrollo, pero puede descargarse una versión de pruebas desde el repositorio de pruebas de paquetes Python. Para instalarlo en sus maquines pueden hacerlo abriendo el <code class="docutils literal notranslate"><span class="pre">Prompt</span> <span class="pre">Miniforge</span></code> y ejecutando:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-i<span class="w"> </span>https://test.pypi.org/simple/<span class="w"> </span>prbs-generator
+</pre></div>
+</div>
+<p>Una vez instalado, podemos generar una onda pseudo aleatoria binaria con el siguiente código:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">prbs.prbs</span> <span class="kn">import</span> <span class="n">prbs</span>
+<span class="n">signal</span><span class="o">=</span><span class="n">prbs</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Esto genera una señal pseudo aleatoria de dimensión 1000 con valores en multiplicidad <span class="math notranslate nohighlight">\(n.12\)</span> con <span class="math notranslate nohighlight">\(n=1\ldots\)</span>, resultando en un espectro plano en las frecuencias <span class="math notranslate nohighlight">\(\left[0,\dfrac{F_s}{2.12}\right]\)</span>, siendo <span class="math notranslate nohighlight">\(F_s\)</span> la frecuencia de muestro.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -474,6 +497,10 @@ mamba<span class="w"> </span>install<span class="w"> </span>spyder
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalar-miniforge">Instalar Miniforge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-de-las-herramientas-especificas-del-curso">Instalación de las herramientas especificas del curso</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaces-de-programacion">Interfaces de programación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-herramientas-necesarias-utiles">Otras herramientas necesarias/utiles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prbs-generatos">PRBS Generatos</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
