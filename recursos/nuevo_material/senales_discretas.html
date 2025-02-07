@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'recursos/nuevo_material/senales_discretas';</script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="Análisis frecuencial de señales en tiempo discreto" href="analisis_frecuencial_en_tiempo_discreto.html" />
+    <link rel="next" title="Respuesta de Sistemas LTI en Tiempo Discreto" href="respuesta_sistemas_LTI_TD.html" />
     <link rel="prev" title="Guía de instalación de las herramientas computacionales" href="../guia_instalacion_python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -170,10 +170,10 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../guia_instalacion_python.html">Guía de instalación de las herramientas computacionales</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Señales en tiempo discreto</a></li>
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="respuesta_sistemas_LTI_TD.html">Respuesta de Sistemas LTI en Tiempo Discreto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="correlacion.html">Correlación en tiempo discreto</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analisis_frecuencial_en_tiempo_discreto.html">Análisis frecuencial de señales en tiempo discreto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuadernos_clases/01-sampleo_tono_puro.html">Cuaderno clase 1</a></li>
 </ul>
 
     </div>
@@ -322,19 +322,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Señales en tiempo discreto</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#periodicidad-de-una-senal-en-tiempo-discreto">Periodicidad de una señal en tiempo discreto</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aliasing">Aliasing</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-muestreo">Teorema de muestreo</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solucion">Solución</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#periodicidad-de-una-senal-en-tiempo-discreto">Periodicidad de una señal en tiempo discreto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aliasing">Aliasing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-muestreo">Teorema de muestreo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-1">Ejemplo 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solucion">Solución</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ejemplo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">Ejemplo 2</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -355,7 +353,7 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="senales-en-tiempo-discreto">
+<section class="tex2jax_ignore mathjax_ignore" id="senales-en-tiempo-discreto">
 <h1>Señales en tiempo discreto<a class="headerlink" href="#senales-en-tiempo-discreto" title="Permalink to this heading">#</a></h1>
 <p>Están definidas sólo en valores discretos de tiempo. Los instantes de tiempo no necesariamente están equiespaciados.</p>
 <ul class="simple">
@@ -413,9 +411,8 @@ x(n)\triangleq x_a(nT)&amp;=A\cos(2\pi FnT+\theta)\\
 \[f=\frac{F}{F_s} \qquad \omega=\frac{\Omega}{F_s}=\Omega T\]</div>
 <p>donde <span class="math notranslate nohighlight">\(f\)</span> es <strong>la frecuencia normalizada o relativa</strong>.</p>
 </div>
-</section>
 <section id="periodicidad-de-una-senal-en-tiempo-discreto">
-<h1>Periodicidad de una señal en tiempo discreto<a class="headerlink" href="#periodicidad-de-una-senal-en-tiempo-discreto" title="Permalink to this heading">#</a></h1>
+<h2>Periodicidad de una señal en tiempo discreto<a class="headerlink" href="#periodicidad-de-una-senal-en-tiempo-discreto" title="Permalink to this heading">#</a></h2>
 <p>En contraste con las señales sinusoidales en Tiempo Continuo, las señales senoidales en tiempo discreto verifican:</p>
 <ul>
 <li><p>Una señal sinusoidal en Tiempo Discreto es periódica si y sólo si su frecuencia <span class="math notranslate nohighlight">\(f\)</span> es un numero racional.
@@ -435,7 +432,7 @@ Por definición <span class="math notranslate nohighlight">\(x(n)\)</span> es pe
 \[N_1=2 \qquad \text{muy distinta} \qquad N_2=60\]</div>
 </section>
 <section id="aliasing">
-<h1>Aliasing<a class="headerlink" href="#aliasing" title="Permalink to this heading">#</a></h1>
+<h2>Aliasing<a class="headerlink" href="#aliasing" title="Permalink to this heading">#</a></h2>
 <p>Señales sinusoidales en Tiempo Discreto cuyas frecuencias están separadas un múltiplo entero de <span class="math notranslate nohighlight">\(2\pi\)</span> son idénticas.</p>
 <div class="math notranslate nohighlight">
 \[\cos\left[(\omega + 2\pi)n+\theta\right] = \cos\left[\omega n + 2\pi n + \theta\right] = \cos\left[\omega n + \theta\right]\]</div>
@@ -477,7 +474,7 @@ Consideremos que:</p></li>
 <p>donde <span class="math notranslate nohighlight">\(F_{max}\)</span> es la máxima frecuencia contenida en la señal analógica.</p>
 </section>
 <section id="teorema-de-muestreo">
-<h1>Teorema de muestreo<a class="headerlink" href="#teorema-de-muestreo" title="Permalink to this heading">#</a></h1>
+<h2>Teorema de muestreo<a class="headerlink" href="#teorema-de-muestreo" title="Permalink to this heading">#</a></h2>
 <div class="admonition-teorema-de-muestreo admonition">
 <p class="admonition-title">Teorema de muestreo</p>
 <p>Si la frecuencia más alta contenida en una señal análogica <span class="math notranslate nohighlight">\(x_a(t)\)</span> es <span class="math notranslate nohighlight">\(F_{max} = B\)</span> y la señal es muestreada con una frecuencia <span class="math notranslate nohighlight">\(F_s&gt;F_{max}=2B\)</span>, entonces <span class="math notranslate nohighlight">\(x_a(t)\)</span> puede ser exactamente recuperada a partir de las muestras como:</p>
@@ -500,13 +497,13 @@ Consideremos que:</p></li>
 <p class="admonition-title">Tasa de Muestreo de Nyquist-Shannon</p>
 <p>A <span class="math notranslate nohighlight">\(F_N\triangleq 2B\)</span> se la denomina Tasa de muestreo de Nyquist</p>
 </div>
-<section id="ejemplo">
-<h2>Ejemplo<a class="headerlink" href="#ejemplo" title="Permalink to this heading">#</a></h2>
+<section id="ejemplo-1">
+<h3>Ejemplo 1<a class="headerlink" href="#ejemplo-1" title="Permalink to this heading">#</a></h3>
 <p>Determinar la tasa de muestreo de Nyquist</p>
 <div class="math notranslate nohighlight">
 \[x_a(t)=3\cos(50\pi t)+10\sin(300\pi t) -\cos(100\pi t)\]</div>
 <section id="solucion">
-<h3>Solución<a class="headerlink" href="#solucion" title="Permalink to this heading">#</a></h3>
+<h4>Solución<a class="headerlink" href="#solucion" title="Permalink to this heading">#</a></h4>
 <div class="math notranslate nohighlight">
 \[F_1=25 Hz \qquad F_2=150Hz \qquad F_3=50Hz\]</div>
 <p>Veamos que <span class="math notranslate nohighlight">\(F_{max}=150Hz \implies F_N=300Hz\)</span></p>
@@ -516,8 +513,8 @@ Consideremos que:</p></li>
 <p>que son idénticamente nulas y obviamente no puede recuperarse la señal a partir de las muestras!!</p>
 </section>
 </section>
-<section id="id1">
-<h2>Ejemplo<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="ejemplo-2">
+<h3>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Permalink to this heading">#</a></h3>
 <p>Supongamos que desea generar y graficar las señales en tiempo continuo <span class="math notranslate nohighlight">\(x_1(t)\)</span> y <span class="math notranslate nohighlight">\(x_2(t)\)</span> definidas como:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -578,6 +575,7 @@ x_2(n)&amp;=\cos\left(\frac{2\pi 550n}{500}\right)=\cos\left(2\pi n + \frac{2\pi
 </div>
 </section>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -619,11 +617,11 @@ x_2(n)&amp;=\cos\left(\frac{2\pi 550n}{500}\right)=\cos\left(2\pi n + \frac{2\pi
       </div>
     </a>
     <a class="right-next"
-       href="analisis_frecuencial_en_tiempo_discreto.html"
+       href="respuesta_sistemas_LTI_TD.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Análisis frecuencial de señales en tiempo discreto</p>
+        <p class="prev-next-title">Respuesta de Sistemas LTI en Tiempo Discreto</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -643,19 +641,17 @@ x_2(n)&amp;=\cos\left(\frac{2\pi 550n}{500}\right)=\cos\left(2\pi n + \frac{2\pi
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Señales en tiempo discreto</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#periodicidad-de-una-senal-en-tiempo-discreto">Periodicidad de una señal en tiempo discreto</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aliasing">Aliasing</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-muestreo">Teorema de muestreo</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solucion">Solución</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#periodicidad-de-una-senal-en-tiempo-discreto">Periodicidad de una señal en tiempo discreto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aliasing">Aliasing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-muestreo">Teorema de muestreo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-1">Ejemplo 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solucion">Solución</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ejemplo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">Ejemplo 2</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>

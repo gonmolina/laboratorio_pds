@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Correlación en tiempo discreto &#8212; Laboratorio de Procesamineto Digital de Señales</title>
+    <title>Respuesta de Sistemas LTI en Tiempo Discreto &#8212; Laboratorio de Procesamineto Digital de Señales</title>
   
   
   
@@ -65,11 +65,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'recursos/nuevo_material/correlacion';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'recursos/nuevo_material/respuesta_sistemas_LTI_TD';</script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="Análisis frecuencial de señales en tiempo discreto" href="analisis_frecuencial_en_tiempo_discreto.html" />
-    <link rel="prev" title="Respuesta de Sistemas LTI en Tiempo Discreto" href="respuesta_sistemas_LTI_TD.html" />
+    <link rel="next" title="Correlación en tiempo discreto" href="correlacion.html" />
+    <link rel="prev" title="Señales en tiempo discreto" href="senales_discretas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   </head>
@@ -170,8 +170,8 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../guia_instalacion_python.html">Guía de instalación de las herramientas computacionales</a></li>
 <li class="toctree-l1"><a class="reference internal" href="senales_discretas.html">Señales en tiempo discreto</a></li>
-<li class="toctree-l1"><a class="reference internal" href="respuesta_sistemas_LTI_TD.html">Respuesta de Sistemas LTI en Tiempo Discreto</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Correlación en tiempo discreto</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Respuesta de Sistemas LTI en Tiempo Discreto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="correlacion.html">Correlación en tiempo discreto</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analisis_frecuencial_en_tiempo_discreto.html">Análisis frecuencial de señales en tiempo discreto</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cuadernos_clases/01-sampleo_tono_puro.html">Cuaderno clase 1</a></li>
 </ul>
@@ -228,7 +228,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/recursos/nuevo_material/correlacion.md" target="_blank"
+      <li><a href="../../_sources/recursos/nuevo_material/respuesta_sistemas_LTI_TD.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Descargar archivo fuente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -312,7 +312,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Correlación en tiempo discreto</h1>
+    <h1>Respuesta de Sistemas LTI en Tiempo Discreto</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -322,14 +322,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlacion-de-senales-en-tiempo-discreto">Correlación de señales en tiempo discreto</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-radar">Ejemplo: radar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-en-tiempo-discreto">Sistemas en Tiempo Discreto</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-1">Ejemplo 1</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#secuencia-de-auto-correlacion-y-correlacion-cruzada">Secuencia de auto-correlación y correlación cruzada</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlacion-de-senales-de-potencia">Correlación de señales de potencia</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#secuencias-de-correlacion-de-entrada-salida">Secuencias de correlación de Entrada/Salida</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades-de-la-autocorrelacion">Propiedades de la autocorrelación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">Ejemplo 2</a></li>
 </ul>
             </nav>
         </div>
@@ -341,170 +338,153 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="correlacion-en-tiempo-discreto">
-<h1>Correlación en tiempo discreto<a class="headerlink" href="#correlacion-en-tiempo-discreto" title="Permalink to this heading">#</a></h1>
-<section id="correlacion-de-senales-en-tiempo-discreto">
-<h2>Correlación de señales en tiempo discreto<a class="headerlink" href="#correlacion-de-senales-en-tiempo-discreto" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>la correlación de dos señales mide el grado de similitud de las mismas.</p></li>
-<li><p>aplicaciones en radar, sonar, comunicaciones digitales, reconocimiento de voz, etc.</p></li>
-</ul>
-<section id="ejemplo-radar">
-<h3>Ejemplo: radar<a class="headerlink" href="#ejemplo-radar" title="Permalink to this heading">#</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="respuesta-de-sistemas-lti-en-tiempo-discreto">
+<h1>Respuesta de Sistemas LTI en Tiempo Discreto<a class="headerlink" href="#respuesta-de-sistemas-lti-en-tiempo-discreto" title="Permalink to this heading">#</a></h1>
+<section id="sistemas-en-tiempo-discreto">
+<h2>Sistemas en Tiempo Discreto<a class="headerlink" href="#sistemas-en-tiempo-discreto" title="Permalink to this heading">#</a></h2>
+<figure class="align-center" id="rta-lti-td">
+<a class="reference internal image-reference" href="../../_images/sistema_TD.png"><img alt="rta_lti_td" src="../../_images/sistema_TD.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 3 </span><span class="caption-text">Respuesta de un sistema LTI en TD a entradas arbitrarias</span><a class="headerlink" href="#rta-lti-td" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
 <div class="math notranslate nohighlight">
-\[y(n)=\alpha x(n-D)+W(n)\]</div>
-<p>donde <span class="math notranslate nohighlight">\(\alpha\)</span> es el factor de atenuación, <span class="math notranslate nohighlight">\(W(n)\)</span> es un ruido aditivo, <span class="math notranslate nohighlight">\(D\)</span> es el retardo de la transmisión/recepción.</p>
-<p><strong>Problema de radar</strong>: determinar si existe un blanco, y si existe determinar el retardo <span class="math notranslate nohighlight">\(D\)</span> que permite determinar la distancia.</p>
+\[u(n) \longrightarrow h(n)\]</div>
+<p>Sea <span class="math notranslate nohighlight">\(H\)</span> un operador entrada salida.</p>
 <ul class="simple">
-<li><p>Si la componente de ruido es muy grande, la simple inspección de <span class="math notranslate nohighlight">\(y(n)\)</span> no permitirá determinar si existe un blanco.</p></li>
-<li><p>Sin embargo, la correlación permitirá extraer esta información de <span class="math notranslate nohighlight">\(y(n)\)</span></p></li>
+<li><p>Hay básicamente dos formas de anaizar la respuesta del sistema a una entrada arbitraria:</p></li>
 </ul>
+<ol class="arabic simple">
+<li><p>Resolviendo explícitamente la ecuación que describe el comportamiento entrada-salida. En general esta ecuación será de la forma:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[y(n)=F[y(n-1), \cdots, y(n-N), u(n), \cdots, u(n-M)]\]</div>
+<p>donde <span class="math notranslate nohighlight">\(F\)</span> es una función posiblemente no lineal.</p>
+<p>Para sistemas LTI, esta relación entrada salida toma la forma general:</p>
+<div class="math notranslate nohighlight" id="equation-eq-diferencias">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-diferencias" title="Enlace permanente a esta ecuación">#</a></span>\[
+y(n)=-\sum_{k=1}^{N}a_k.y(n-k)+\sum_{k=0}^{M}b_k.u(n-k)
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\({a_k}\)</span> y <span class="math notranslate nohighlight">\({b_k}\)</span> son parámetros constantes.</p>
+<p>La forma <a class="reference internal" href="#equation-eq-diferencias">(1)</a> se denomina <strong>ecuación en diferencias</strong> (de orden N).</p>
+<ol class="arabic simple" start="2">
+<li><p>Descomponiendo la señal de entrada en la combinación lineal de <strong>señales elementales</strong>, para las cuales sea «fácil» calcular la respuesta del sistema.</p></li>
+</ol>
+<p>Luego, usando la propiedad de linealidad, la respuesta a la entrada arbitraria puede calcularse por <strong>superposición</strong> de las respuestas a las señales elementales.</p>
+<p>Supongamos entonces:</p>
+<div class="math notranslate nohighlight">
+\[y_k(n)=H[u_k(n)]\]</div>
+<p>Luego:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+y(n)&amp;=H[u(n)]=H\left[\sum_k c_k.u_k(n)\right]\\
+&amp;=\sum_k H\left[c_k.u_k(n)\right]\\
+&amp;=\sum_k c_k.H\left[u_k(n)\right]\\
+&amp;=\sum_k c_k.y_k(n)
+\end{align*}
+\end{split}\]</div>
+<p>Una señal elemental que facilita el análisis es el <strong>impulso unitario <span class="math notranslate nohighlight">\(\delta(n)\)</span></strong> definido como:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\delta(n)=\left\{
+\begin{array}{cc}
+1&amp;\quad \text{si } n=0\\
+0&amp;\quad \text{si } n\neq 0
+\end{array}
+\right.
+\end{split}\]</div>
+<p>que también es posible escribir como:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\delta(n-k)=\left\{
+\begin{array}{cc}
+1&amp;\quad \text{si } n=k\\
+0&amp;\quad \text{si } n\neq k
+\end{array}
+\right.
+\end{split}\]</div>
+<p>Si adoptamos:</p>
+<div class="math notranslate nohighlight">
+\[u_k(n)=\delta(n-k)\]</div>
+<p>debemos encontrar los coeficiente <span class="math notranslate nohighlight">\(c_k\)</span> tal que una señal se pueda escribir como:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+u(n)&amp;=\sum_k c_k.u_k(n)\\
+&amp;=\sum_k c_k.\delta(n-k)
+\end{align*}\]</div>
+<p>Notando que:</p>
+<div class="math notranslate nohighlight">
+\[x(n)\delta(n-k)=x(k).\delta(n-k)\]</div>
+<p>Podemos escribir:</p>
+<div class="math notranslate nohighlight">
+\[
+u(n)=\sum_{k=-\infty}^{\infty}u(k).\delta(n-k)
+\]</div>
+<p>La respuesta del sistema a la entrada <span class="math notranslate nohighlight">\(u(n)\)</span> será entonces:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+y(n)&amp;=H\left[u(n)\right]=H\left[\sum_{k=-\infty}^{\infty} u(k).\delta(k)\right]\\
+&amp;=\sum_{k=-\infty}^{\infty} H\left[u(k).\delta(k)\right]\\
+&amp;=\sum_{k=-\infty}^{\infty} u(k).H\left[\delta(k)\right]
+\end{align*}
+\end{split}\]</div>
+<p>Definimos:</p>
+<div class="math notranslate nohighlight">
+\[H\left[\delta(n-k)\right]\triangleq h(n,k)\]</div>
+<p>es la respuesta en el instante <span class="math notranslate nohighlight">\(n\)</span> al impulso aplicado en <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<p>Con lo que resulta:</p>
+<div class="math notranslate nohighlight">
+\[y(n)=\sum_{k=-\infty}^{\infty}u(k).h(n,k)\]</div>
+<p>que es la suma de superposición.</p>
+<p>Si el sistema es estacionario:</p>
+<div class="math notranslate nohighlight">
+\[\delta(n) \longrightarrow h(n,0)=h(n)\]</div>
+<div class="math notranslate nohighlight">
+\[\delta(n-k) \longrightarrow h(n,k)=h(n-k)\]</div>
+<p>Con lo que resulta:</p>
+<div class="math notranslate nohighlight">
+\[y(n)=\sum_{k=-\infty}^{\infty}u(k).h(n-k)\]</div>
+<p>que es la <strong>suma de convolución</strong>.</p>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p>La respuesta de un Sistema Lineal e Invariante en el Tiempo (estacionario) a una entrada <span class="math notranslate nohighlight">\(u(n)\)</span> es la convolución entre la entrada y la respuesta al impulso del sistema.</p>
+</div>
+<p>Denotamos:</p>
+<div class="math notranslate nohighlight">
+\[u(n)*h(n)=\sum_{k=-\infty}^{\infty}u(k).h(n-k)\]</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Un sistema lienal e invariante en el tiempo queda completamente caracterizado por su respuesta al impulso <span class="math notranslate nohighlight">\(h(n)\)</span>.</p>
+</div>
+<section id="ejemplo-1">
+<h3>Ejemplo 1<a class="headerlink" href="#ejemplo-1" title="Permalink to this heading">#</a></h3>
+<p>Se debe determinar la respuesta del sistema FIR (Finite Impulse Response) lineal e invariante en el tiempo con respuesta al impulso:</p>
+<div class="math notranslate nohighlight">
+\[
+h(n)={1,2,1,-1}
+\]</div>
+<p>a la entrada:</p>
+<div class="math notranslate nohighlight">
+\[u(n)={1,2,3,1}\]</div>
 </section>
 </section>
-<section id="secuencia-de-auto-correlacion-y-correlacion-cruzada">
-<h2>Secuencia de auto-correlación y correlación cruzada<a class="headerlink" href="#secuencia-de-auto-correlacion-y-correlacion-cruzada" title="Permalink to this heading">#</a></h2>
-<p>Supongamos dos señales <span class="math notranslate nohighlight">\(x(n)\)</span> e <span class="math notranslate nohighlight">\(y(n)\)</span> de energía finita. La <strong>secuencia de correlación cruzada</strong> de las dos señales se define como:</p>
-<div class="math notranslate nohighlight">
-\[r_{xy}(l)=\sum_{n=-\infty}^{\infty}x(n)y(n-l)\quad l=0,\pm 1, \pm 2, \ldots\]</div>
-<p>o equivalentemente</p>
-<div class="math notranslate nohighlight">
-\[r_{xy}(l)=\sum_{n=-\infty}^{\infty}x(n+l)y(n), \quad l=\pm 1, \pm 2, \ldots\]</div>
+<section id="ejemplo-2">
+<h2>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>El orden de los subíndices en <span class="math notranslate nohighlight">\(r_{xy}(l)\)</span> indica la dirección en que la primer señal es desplazada con respecto a la otra.</p></li>
+<li><p><span class="math notranslate nohighlight">\(h(n)=a^n\mu(n), \quad 0&lt;a&lt;1\)</span>i</p></li>
+<li><p><span class="math notranslate nohighlight">\(u(n)=\mu(n)\)</span></p></li>
 </ul>
-<p>Similarmente se definen</p>
+<p>La respuesta del sistema resulta:</p>
 <div class="math notranslate nohighlight">
-\[r_{yx}(l)=\sum_{n=-\infty}^{\infty}y(n)x(n-l)\quad l=0,\pm 1, \pm 2, \ldots\]</div>
-<p>o equivalentemente</p>
+\[
+y(n)=h(n)*u(n)=\sum_{k=-\infty}^{\infty} h(k)u(n-k)
+\]</div>
+<p>Esto nos queda para este caso:</p>
 <div class="math notranslate nohighlight">
-\[r_{yx}(l)=\sum_{n=-\infty}^{\infty}y(n+l)x(n), \quad l=\pm 1, \pm 2, \ldots\]</div>
-<p>Es fácil verificar que</p>
-<div class="math notranslate nohighlight">
-\[r_{xy}(l)=r_{yx}(-l)\]</div>
-<p>por lo que <span class="math notranslate nohighlight">\(r_{xy}(l)\)</span> provee exactamente la misma información que <span class="math notranslate nohighlight">\(r_{yx}(l)\)</span>.</p>
-<p>Puede probarse que:</p>
-<div class="math notranslate nohighlight">
-\[r_{xy}=x(l)y(-l)\]</div>
-<ul class="simple">
-<li><p>En el caso especial de <span class="math notranslate nohighlight">\(x(n)=y(n)\)</span>, se tiene la secuencia de autocorrelación de <span class="math notranslate nohighlight">\(x(n)\)</span>.</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[r_{xx}(l)=\sum_{n=-\infty}^{\infty}x(n)x(n-l)\quad l=0,\pm 1, \pm 2, \ldots\]</div>
-<p>o equivalentemente</p>
-<div class="math notranslate nohighlight">
-\[r_{xx}(l)=\sum_{n=-\infty}^{\infty}x(n+l)x(n), \quad l=\pm 1, \pm 2, \ldots\]</div>
-<p>Si <span class="math notranslate nohighlight">\(x(n)\)</span> e <span class="math notranslate nohighlight">\(y(n)\)</span> son señales de duración finita <span class="math notranslate nohighlight">\(N\)</span>, resulta</p>
-<div class="math notranslate nohighlight">
-\[r_{xy}(l)=\sum_{n=i}^{N-|k|-1}x(n)y(n-l)\]</div>
-<p>y</p>
-<div class="math notranslate nohighlight">
-\[r_{xx}(l)=\sum_{n=i}^{N-|k|-1}x(n)x(n-l)\]</div>
-<p>donde:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-  i=l, k=0 &amp;\quad \text{para } l\geq 0\\
-  i=0, k=l &amp;\quad \text{para } l&lt;0
-\end{align*}
-\end{split}\]</div>
-</section>
-<section id="correlacion-de-senales-de-potencia">
-<h2>Correlación de señales de potencia<a class="headerlink" href="#correlacion-de-senales-de-potencia" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Para señales de potencia <span class="math notranslate nohighlight">\(x(n)\)</span> e <span class="math notranslate nohighlight">\(y(n)\)</span> la <strong>correlación cruzada</strong> se define</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[r_{xy}(l)=\lim_{M\rightarrow \infty} \frac{1}{2M+1}\sum_{n=-M}^{M}x(n)y(n-l)\]</div>
-<ul class="simple">
-<li><p>Si <span class="math notranslate nohighlight">\(x(n)=y(n)\)</span> resulta la <strong>autocorrelación de la señal de potencia</strong></p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[r_{xx}(l)=\lim_{M\rightarrow \infty} \frac{1}{2M+1}\sum_{n=-M}^{M}x(n)x(n-l)\]</div>
-<ul class="simple">
-<li><p>En particular, si <span class="math notranslate nohighlight">\(x(n)\)</span> e <span class="math notranslate nohighlight">\(y(n)\)</span> son <strong>señales periódicas con período <span class="math notranslate nohighlight">\(N\)</span></strong>, estas dos últimas relaciones pueden computarse en un período.</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[r_{xy}(l)=\frac{1}{N}\sum_{n=0}^{N-1}x(n)y(n-l)\]</div>
-<div class="math notranslate nohighlight">
-\[r_{xx}(l)=\frac{1}{N}\sum_{n=0}^{N-1}x(n)x(n-l)\]</div>
-<ul class="simple">
-<li><p>Es fácil ver que en esta caso <span class="math notranslate nohighlight">\(r_{xy}(l)\)</span> y <span class="math notranslate nohighlight">\(r_{xx}(l)\)</span> resultan secuencias periódicas de período <span class="math notranslate nohighlight">\(N\)</span>.</p></li>
-</ul>
-</section>
-<section id="secuencias-de-correlacion-de-entrada-salida">
-<h2>Secuencias de correlación de Entrada/Salida<a class="headerlink" href="#secuencias-de-correlacion-de-entrada-salida" title="Permalink to this heading">#</a></h2>
-<p>La respuesta a una entrada arbitraria <span class="math notranslate nohighlight">\(u(n)\)</span> es</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-y(n)&amp;=h(n)*u(n)\\
-&amp;=\sum_{k=-\infty}^{\infty}h(k)u(n-k)
-\end{align*}
-\end{split}\]</div>
-<p>La correlación entre la entrada y la salida es:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-  r_{yu}(l)&amp;=y(l)*u(-l)\\
-  &amp;=h(l)*u(l)*u(-l)\\
-  &amp;=h(l)*r_{uu}(l)
-\end{align*}
-\end{split}\]</div>
-<p>Por lo que resulta:</p>
-<div class="math notranslate nohighlight">
-\[r_{yu}(l)=h(l)*r_{uu}(l)\]</div>
-<ul class="simple">
-<li><p>La relación anterior se puede emplear para la estimación de un número finito de términos de la respuesta al impulso <span class="math notranslate nohighlight">\({h(n)}\)</span> a partir dek cómputo de las secuencias de correlación entrada salid <span class="math notranslate nohighlight">\(r_{yu}(l)\)</span> y de la autocorrelación de la entrada <span class="math notranslate nohighlight">\(r_{uu}(l)\)</span>.</p></li>
-<li><p>La autocorrelación de la salida resulta:</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-r_{yy}(l)&amp;=y(l)*y(-l)\\
-&amp;=[h(l)*u(l)]*[h(-l)*u(-l)]\\
-&amp;=[h(l)*h(-l)]*[u(l)*u(-l)]\\
-&amp;=r_{hh}(l)*r_{uu}(l)
-\end{align*}
-\end{split}\]</div>
-<p><strong>Nota</strong> <span class="math notranslate nohighlight">\(r_{hh}(l)\)</span> existe si el sistema es estable</p>
-</section>
-<section id="propiedades-de-la-autocorrelacion">
-<h2>Propiedades de la autocorrelación<a class="headerlink" href="#propiedades-de-la-autocorrelacion" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Simetría par</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-r_{xx}(l)&amp;=\sum_{n=-\infty}^{\infty}x(n+l)x(n)\\
-&amp;=\sum_{m=-\infty}^{\infty}x(m)x(m-l)
-&amp;=r_{xx}(-l)
-\end{align*}
-\end{split}\]</div>
-<p>donde se hizo el cambio de variables <span class="math notranslate nohighlight">\(m=n+l\)</span>.</p>
-<ul class="simple">
-<li><p>Autocorrelación y Energía de la señal</p></li>
-</ul>
-<p>Calculemos la autocorrelación para <span class="math notranslate nohighlight">\(l=0\)</span></p>
-<div class="math notranslate nohighlight">
-\[r_{xx}=\sum_{n=-\infty}^{\infty}x(n+0)x(n)=\sum_{n=-\infty}^{\infty}x(n)^2=E_x\]</div>
-<p>que es la <strong>energía de la señal</strong>.</p>
-<ul class="simple">
-<li><p>Autocorrelación de una señal periódica</p></li>
-</ul>
-<p>Sea <span class="math notranslate nohighlight">\(x(n)\)</span> una señal periódica con periodo <span class="math notranslate nohighlight">\(N\)</span>, es decir se verifica que:</p>
-<div class="math notranslate nohighlight">
-\[x(n)=x(n+N)\]</div>
-<p>Luego, la autocorrelación resulta</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-  r_{xx}(l+N)&amp;=\frac{1}{N}\sum_{n=0}^{N-1}x(n+N+l)x(n)\\
-  &amp;=\frac{1}{N}\sum_{n=0}^{N-1}x(n+l)x(n)\\
-  &amp;=r_{xx}(l)
-\end{align*}
-\end{split}\]</div>
-<p>Es decir, es periódica con periodo N.</p>
+\[y(n)=h(n)*u(n)=\sum_{k=0}^{n} a^k=\frac{1-a^{n+1}}{1-a}\mu(n), \quad \forall n\]</div>
+<p>Suma finita de tipo geométrica.</p>
 </section>
 </section>
 
@@ -539,20 +519,20 @@ r_{xx}(l)&amp;=\sum_{n=-\infty}^{\infty}x(n+l)x(n)\\
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="respuesta_sistemas_LTI_TD.html"
+       href="senales_discretas.html"
        title="página anterior">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">Respuesta de Sistemas LTI en Tiempo Discreto</p>
+        <p class="prev-next-title">Señales en tiempo discreto</p>
       </div>
     </a>
     <a class="right-next"
-       href="analisis_frecuencial_en_tiempo_discreto.html"
+       href="correlacion.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Análisis frecuencial de señales en tiempo discreto</p>
+        <p class="prev-next-title">Correlación en tiempo discreto</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -572,14 +552,11 @@ r_{xx}(l)&amp;=\sum_{n=-\infty}^{\infty}x(n+l)x(n)\\
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlacion-de-senales-en-tiempo-discreto">Correlación de señales en tiempo discreto</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-radar">Ejemplo: radar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-en-tiempo-discreto">Sistemas en Tiempo Discreto</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-1">Ejemplo 1</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#secuencia-de-auto-correlacion-y-correlacion-cruzada">Secuencia de auto-correlación y correlación cruzada</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlacion-de-senales-de-potencia">Correlación de señales de potencia</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#secuencias-de-correlacion-de-entrada-salida">Secuencias de correlación de Entrada/Salida</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades-de-la-autocorrelacion">Propiedades de la autocorrelación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">Ejemplo 2</a></li>
 </ul>
   </nav></div>
 

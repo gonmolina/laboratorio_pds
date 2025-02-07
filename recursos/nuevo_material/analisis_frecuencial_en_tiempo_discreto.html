@@ -68,7 +68,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'recursos/nuevo_material/analisis_frecuencial_en_tiempo_discreto';</script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="prev" title="Señales en tiempo discreto" href="senales_discretas.html" />
+    <link rel="next" title="Cuaderno clase 1" href="../cuadernos_clases/01-sampleo_tono_puro.html" />
+    <link rel="prev" title="Correlación en tiempo discreto" href="correlacion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   </head>
@@ -169,10 +170,10 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../guia_instalacion_python.html">Guía de instalación de las herramientas computacionales</a></li>
 <li class="toctree-l1"><a class="reference internal" href="senales_discretas.html">Señales en tiempo discreto</a></li>
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="respuesta_sistemas_LTI_TD.html">Respuesta de Sistemas LTI en Tiempo Discreto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="correlacion.html">Correlación en tiempo discreto</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Análisis frecuencial de señales en tiempo discreto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuadernos_clases/01-sampleo_tono_puro.html">Cuaderno clase 1</a></li>
 </ul>
 
     </div>
@@ -361,7 +362,7 @@ expresarse como:</p>
 <div class="admonition-serie-de-fourier admonition">
 <p class="admonition-title">Serie de Fourier</p>
 <div class="math notranslate nohighlight" id="equation-eq1">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eq1" title="Enlace permanente a esta ecuación">#</a></span>\[
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq1" title="Enlace permanente a esta ecuación">#</a></span>\[
 \begin{equation}
 x(n)=\sum_{k=0}^{N-1}c_k e^{j\frac{2\pi kn}{N}}
 \end{equation}
@@ -378,7 +379,7 @@ N &amp; k=0,\pm N, \pm 2N, \cdots\\
 \end{array}
 \right.
 \end{split}\]</div>
-<p>Reemplazando en <a class="reference internal" href="#equation-eq1">(1)</a>, tenemos:</p>
+<p>Reemplazando en <a class="reference internal" href="#equation-eq1">(2)</a>, tenemos:</p>
 <div class="math notranslate nohighlight">
 \[x(n)e^{-j\frac{2\pi ln}{N}}=\sum_{k=0}^{N-1}c_ke^{j\frac{2\pi (k-l)n}{N}}\]</div>
 <p>Sumando sobre <span class="math notranslate nohighlight">\(n\)</span>:</p>
@@ -956,13 +957,22 @@ X(\omega)=2\pi\sum_{k=0}^{N-1}c_k\sum_{l=-\infty}^{\infty}\delta\left(\omega\dfr
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="senales_discretas.html"
+       href="correlacion.html"
        title="página anterior">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">Señales en tiempo discreto</p>
+        <p class="prev-next-title">Correlación en tiempo discreto</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../cuadernos_clases/01-sampleo_tono_puro.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Cuaderno clase 1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
