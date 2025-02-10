@@ -18,11 +18,11 @@ Si ya se cuenta con una instalación de Anaconda, entonces ya se dispone del ges
 Seguir las recomendaciones por defecto dadas por el instalador. 
 Durante el proceso de instalación en windows se presentarán varios un cuadros de diálogos. 
 En general es conveniente aceptar las opciones recomendadas por defecto. La mismas incluyen:  
-- Instalar miniforge solo para el usuario actual 
+- Instalar Miniforge solo para el usuario actual 
 - Dejar el directorio de instalación por defecto
 Cuando aparece el cuadro de dialogo de las opciones avanzadas de instalación seleccionar solo:
 - la opción de crear los atajos en el menú de inicio
-- la opción de registrar el  Python de miniforge como default para el usuario  
+- la opción de registrar el  Python de Miniforge como default para el usuario  
 Una vez terminada la instalación tendremos Python instalado en nuestro sistema. 
 Además tendremos en el menú de inicio una carpeta
 que se llama `Miniforge3` con un item dentro `Miniforge Prompt`, el cual abriremos para continuar con la instalación de las herramientas del curso.
@@ -30,13 +30,13 @@ que se llama `Miniforge3` con un item dentro `Miniforge Prompt`, el cual abrirem
 
 ## Instalación de las herramientas especificas del curso
 
-Para continuar con la instalación necesitaremos descargar el archivo [dyc.yml](https://drive.google.com/file/d/1KPSj-89Q4wTa5ifQvaCoa0_ohCtBXUGf/view?usp=sharing) haciendo click sobre el enlace anterior. Una vez descargado, dirigirse con la consola de Anaconda Powershell Prompt abierta a la carpeta de descargas donde se encuentra el archivo `dyc.yml` descargado anteriormente. En general, para dirigirse a esta carpeta debemos tipear
+Para continuar con la instalación necesitaremos descargar el archivo [dyc.yml](https://drive.google.com/file/d/1KPSj-89Q4wTa5ifQvaCoa0_ohCtBXUGf/view?usp=sharing) haciendo click sobre el enlace anterior. Una vez descargado, dirigirse con la consola de Anaconda Powershell Prompt abierta a la carpeta de descargas donde se encuentra el archivo `dyc.yml` descargado anteriormente. En general, para dirigirse a esta carpeta debemos escribir:
 
 ```bash
 cd ~\Downloads\
 ```
 
-Para verificar que el archivo se encuentre ahí, podemos tipear:
+Para verificar que el archivo se encuentre ahí, podemos ejecutar:
 
 ```bash
 dir dyc.yml
@@ -63,18 +63,19 @@ Los cuadernos se pueden ver/ejecutar en cualquier entorno de desarrollo de pytho
     - Spyder: se puede instalar mediante desde el `Miniforge Prompt` con los siguientes comandos 
     ```bash
     mamba activate dyc
-    mamba install spyder
+    mamba install Spyder
     ```
     Este entorno de desarrollo provee una interface muy parecida a la de Matlab lo cuál es una ventaja para quien está acostumbrado a este software, pero es mucho más pesado que los anteriores.
     - PyCharm: Entorno profesional para desarrollo de Python que tiene una versión sin costo con algunas limitaciones.
 
-## Otras herramientas necesarias/utiles
+## Otras herramientas necesarias/útiles
 
-### PRBS Generatos
+### Generador de señales pseudo aleatorias binarias: 
 
 Es una paquete de Python para generar señales pseudo aleatorias binarias. Actualmente está en desarrollo, pero puede descargarse una versión de pruebas desde el repositorio de pruebas de paquetes Python. Para instalarlo en sus maquines pueden hacerlo abriendo el `Prompt Miniforge` y ejecutando:
 
 ```bash
+mamba activate dyc
 pip install -i https://test.pypi.org/simple/ prbs-generator
 ```
 
@@ -84,5 +85,5 @@ Una vez instalado, podemos generar una onda pseudo aleatoria binaria con el sigu
 from prbs.prbs import prbs
 signal=prbs(1000, 12)
 ```
-Esto genera una señal pseudo aleatoria de dimensión 1000 con valores en multiplicidad $n.12$ con $n=1\ldots$, resultando en un espectro plano en las frecuencias $\left[0,\dfrac{F_s}{2.12}\right]$, siendo $F_s$ la frecuencia de muestro.
+Esto genera una señal pseudo aleatoria de dimensión 1000 con valores en multiplicidad $n.12$ con $n=1\ldots$, resultando en un espectro plano en las frecuencias $\left[0,\dfrac{F_s}{2\cdot 12}\right]$, siendo $F_s$ la frecuencia de muestro.
 
