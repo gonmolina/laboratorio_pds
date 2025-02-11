@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-```{code-cell} ipython3
+```{code-cell}
 import numpy as np
 import matplotlib.pyplot as plt
 import sympy as sp
@@ -91,14 +91,14 @@ El sistema en definitiva es el mismo pero no tendremos acceso físico a las etap
 - Solo disponemos datos a tiempos discretos  $t_i=i\times\Delta t$
 - Solo disponemos de una longitud finita de datos
 
-```{code-cell} ipython3
+```{code-cell}
 t=np.linspace(0, 20, 5100, endpoint=True) # hacer otra señal
 x=np.sin(2*np.pi*0.5*t)*2
 qx=np.round(x)
 er=qx-x
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 fig, ax=plt.subplots(2,1, figsize=(10,6))
 ax[0].step(t, x, 'b', lw=2, label='señal continua', where='post')
 ax[0].step(t, qx, 'r', lw=1, label='señal cuantizada', where='post')
@@ -140,7 +140,7 @@ La desviación estándar del error de cuantización se calcula como la resoluci�
 
 ## Error de cuantización para señales "constantes"
 
-```{code-cell} ipython3
+```{code-cell}
 t=np.linspace(0, 20, 5100, endpoint=True) # hacer otra señal
 x=np.sin(2*np.pi*0.5*t)*0.4+0.7
 qx=np.round(x)
@@ -152,13 +152,13 @@ ax.set_xlabel('time [seg]')
 ax.grid()
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 print(f"El valor medio de la señal analógica es: {np.mean(x)},\n"+
       f"el valor medio de la señal cuantizada es: {np.mean(qx)},\n"+
       f"y el error es: {np.mean(qx)-np.mean(x)}")
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 t=np.linspace(0, 20, 5100, endpoint=True) # hacer otra señal
 x=np.sin(2*np.pi*0.5*t)*0.4+0.7+np.random.uniform(low=-0.5, high=0.5, size=t.shape[0])
 qx=np.round(x)
@@ -170,13 +170,13 @@ ax.set_xlabel('time [seg]')
 ax.grid()
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 print(f"El valor medio de la señal continua es: {np.mean(x)},\n"+
       f"el valor medio de la señal cuantizada es: {np.mean(qx)},\n"+
       f"y el error es: {np.mean(qx)-np.mean(x)}")
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 
 ```
 
@@ -216,7 +216,7 @@ Fíjense que la desviación estándar de la señal y el error de cuantización s
 
 ### solución del problema anterior
 
-```{code-cell} ipython3
+```{code-cell}
 import scipy as sc
 
 dta = 0.001
@@ -260,7 +260,7 @@ Ahora vamos a pensar en el segundo punto, que solo dispondremos de datos a tiemp
 
 Ejemplo
 
-```{code-cell} ipython3
+```{code-cell}
 ta = 0.001 # sample time
 Ta=20  # total signal time
 Na = int(Ta/dta)+1 # +1 para agregar el punto final
@@ -305,7 +305,7 @@ Vemos en esta figura que tenemos un solo ciclo completo de la frecuencia menor y
 
 ### Alta resolución temporal
 
-```{code-cell} ipython3
+```{code-cell}
 fs1=3  # muestreo a una frecuencia multiplo de la señal que generé para evitar la interpolación
 dts1=1/fs1 
 ts1=np.linspace(0, Ta, int(20/dts1)+1, endpoint=True) # incluye el 20
@@ -332,7 +332,7 @@ Obviamente parte del ruido blanco sigue existiendo en la medición, ya que ningu
 
 ## Limite de detección
 
-```{code-cell} ipython3
+```{code-cell}
 fs1=1  # muestreo a una frecuencia multiplo de la señal que generé para evitar la interpolación
 dts1=1/fs1 
 ts1=np.linspace(0, Ta, int(20/dts1)+1) # incluye el 20
@@ -363,7 +363,7 @@ Esto es cierto para una señal como la que tenemos en la figura!!!!! Pero el teo
 
 ## Aliasing
 
-```{code-cell} ipython3
+```{code-cell}
 fs2=.7 # muestreo a una frecuencia multiplo de la señal que generé para evitar la interpolación
 dts2=1/fs2 
 ts2=np.linspace(0, Ta, int(Ta/dts2)+1) # incluye el 20
@@ -390,7 +390,7 @@ De hecho vamos a ver que podemos ajustar los puntos con una señal construida a 
 
 Puedo ajustar los puntos con f3-f_d, es decir, reemplazo la frecuencia más alta por su “espejo” (cambia la fase también 180º ó π)
 
-```{code-cell} ipython3
+```{code-cell}
 fs3=.5 # muestreo a una frecuencia multiplo de la señal que generé para evitar la interpolación
 dts3=1/fs3 
 ts3=np.linspace(0, Ta, int(Ta/dts3)+1) # incluye el 20
@@ -432,6 +432,6 @@ La primera prueba que deben realizar es agregar una fase a cada una de las funci
 Luego agregar a la señal una componente cosenoidal con frecuencia igual a la tasa de muestreo f sub d.
 También deberán realizar algunas pruebas modificando las frecuencias f1, f2 y f sub d.
 
-```{code-cell} ipython3
+```{code-cell}
 
 ```
