@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -168,9 +168,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../guia_instalacion_python.html">Guía de instalación de las herramientas computacionales</a></li>
 <li class="toctree-l1"><a class="reference internal" href="senales_discretas.html">Señales en tiempo discreto</a></li>
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="respuesta_sistemas_LTI_TD.html">Respuesta de Sistemas LTI en Tiempo Discreto</a></li>
 <li class="toctree-l1"><a class="reference internal" href="correlacion.html">Correlación en tiempo discreto</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Análisis frecuencial de señales en tiempo discreto</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transf_fourier_discreta.html">Análisis frecuencial de señales usando ventanas</a></li>
@@ -360,7 +358,7 @@ expresarse como:</p>
 <div class="admonition-serie-de-fourier admonition">
 <p class="admonition-title">Serie de Fourier</p>
 <div class="math notranslate nohighlight" id="equation-eq1">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eq1" title="Link to this equation">#</a></span>\[
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq1" title="Link to this equation">#</a></span>\[
 \begin{equation}
 x(n)=\sum_{k=0}^{N-1}c_k e^{j\frac{2\pi kn}{N}}
 \end{equation}
@@ -377,7 +375,7 @@ N &amp; k=0,\pm N, \pm 2N, \cdots\\
 \end{array}
 \right.
 \end{split}\]</div>
-<p>Reemplazando en <a class="reference internal" href="#equation-eq1">(1)</a>, tenemos:</p>
+<p>Reemplazando en <a class="reference internal" href="#equation-eq1">(2)</a>, tenemos:</p>
 <div class="math notranslate nohighlight">
 \[x(n)e^{-j\frac{2\pi ln}{N}}=\sum_{k=0}^{N-1}c_ke^{j\frac{2\pi (k-l)n}{N}}\]</div>
 <p>Sumando sobre <span class="math notranslate nohighlight">\(n\)</span>:</p>

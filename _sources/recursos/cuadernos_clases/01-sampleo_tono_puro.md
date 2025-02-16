@@ -74,7 +74,7 @@ plt.grid()
 plt.xlabel("Tiempo [seg]")
 plt.ylabel("Amplitud []")
 plt.xlim([0,5e-3])
-f.tight_layout();
+f.tight_layout()
 ```
 
 Ahora salvamos la señal en un formato de audio que puede ser reproducido por la computadora.

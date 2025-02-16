@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -61,6 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'recursos/guia_instalacion_python';</script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Búsqueda" href="../search.html" />
@@ -166,9 +168,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Guía de instalación de las herramientas computacionales</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nuevo_material/senales_discretas.html">Señales en tiempo discreto</a></li>
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="nuevo_material/respuesta_sistemas_LTI_TD.html">Respuesta de Sistemas LTI en Tiempo Discreto</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nuevo_material/correlacion.html">Correlación en tiempo discreto</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nuevo_material/analisis_frecuencial_en_tiempo_discreto.html">Análisis frecuencial de señales en tiempo discreto</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nuevo_material/transf_fourier_discreta.html">Análisis frecuencial de señales usando ventanas</a></li>
@@ -322,6 +322,10 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalar-miniforge">Instalar Miniforge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-de-las-herramientas-especificas-del-curso">Instalación de las herramientas especificas del curso</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaces-de-programacion">Interfaces de programación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-herramientas-necesarias-utiles">Otras herramientas necesarias/útiles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generador-de-senales-pseudo-aleatorias-binarias">Generador de señales pseudo aleatorias binarias:</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -352,11 +356,11 @@ Los entornos de Python nos brindan las posibilidad de instalar todas las bibliot
 Durante el proceso de instalación en windows se presentarán varios un cuadros de diálogos.
 En general es conveniente aceptar las opciones recomendadas por defecto. La mismas incluyen:</p>
 <ul class="simple">
-<li><p>Instalar miniforge solo para el usuario actual</p></li>
+<li><p>Instalar Miniforge solo para el usuario actual</p></li>
 <li><p>Dejar el directorio de instalación por defecto
 Cuando aparece el cuadro de dialogo de las opciones avanzadas de instalación seleccionar solo:</p></li>
 <li><p>la opción de crear los atajos en el menú de inicio</p></li>
-<li><p>la opción de registrar el  Python de miniforge como default para el usuario<br />
+<li><p>la opción de registrar el  Python de Miniforge como default para el usuario<br />
 Una vez terminada la instalación tendremos Python instalado en nuestro sistema.
 Además tendremos en el menú de inicio una carpeta
 que se llama <code class="docutils literal notranslate"><span class="pre">Miniforge3</span></code> con un item dentro <code class="docutils literal notranslate"><span class="pre">Miniforge</span> <span class="pre">Prompt</span></code>, el cual abriremos para continuar con la instalación de las herramientas del curso.</p></li>
@@ -364,11 +368,11 @@ que se llama <code class="docutils literal notranslate"><span class="pre">Minifo
 </section>
 <section id="instalacion-de-las-herramientas-especificas-del-curso">
 <h2>Instalación de las herramientas especificas del curso<a class="headerlink" href="#instalacion-de-las-herramientas-especificas-del-curso" title="Link to this heading">#</a></h2>
-<p>Para continuar con la instalación necesitaremos descargar el archivo <a class="reference external" href="https://drive.google.com/file/d/1KPSj-89Q4wTa5ifQvaCoa0_ohCtBXUGf/view?usp=sharing">dyc.yml</a> haciendo click sobre el enlace anterior. Una vez descargado, dirigirse con la consola de Anaconda Powershell Prompt abierta a la carpeta de descargas donde se encuentra el archivo <code class="docutils literal notranslate"><span class="pre">dyc.yml</span></code> descargado anteriormente. En general, para dirigirse a esta carpeta debemos tipear</p>
+<p>Para continuar con la instalación necesitaremos descargar el archivo <a class="reference external" href="https://drive.google.com/file/d/1KPSj-89Q4wTa5ifQvaCoa0_ohCtBXUGf/view?usp=sharing">dyc.yml</a> haciendo click sobre el enlace anterior. Una vez descargado, dirigirse con la consola de Anaconda Powershell Prompt abierta a la carpeta de descargas donde se encuentra el archivo <code class="docutils literal notranslate"><span class="pre">dyc.yml</span></code> descargado anteriormente. En general, para dirigirse a esta carpeta debemos escribir:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~<span class="se">\D</span>ownloads<span class="se">\</span>
 </pre></div>
 </div>
-<p>Para verificar que el archivo se encuentre ahí, podemos tipear:</p>
+<p>Para verificar que el archivo se encuentre ahí, podemos ejecutar:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dir<span class="w"> </span>dyc.yml
 </pre></div>
 </div>
@@ -391,7 +395,7 @@ que se llama <code class="docutils literal notranslate"><span class="pre">Minifo
 <li><p>Spyder: se puede instalar mediante desde el <code class="docutils literal notranslate"><span class="pre">Miniforge</span> <span class="pre">Prompt</span></code> con los siguientes comandos</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>activate<span class="w"> </span>dyc
-mamba<span class="w"> </span>install<span class="w"> </span>spyder
+mamba<span class="w"> </span>install<span class="w"> </span>Spyder
 </pre></div>
 </div>
 <p>Este entorno de desarrollo provee una interface muy parecida a la de Matlab lo cuál es una ventaja para quien está acostumbrado a este software, pero es mucho más pesado que los anteriores.</p>
@@ -400,6 +404,23 @@ mamba<span class="w"> </span>install<span class="w"> </span>spyder
 </ul>
 </li>
 </ul>
+</section>
+<section id="otras-herramientas-necesarias-utiles">
+<h2>Otras herramientas necesarias/útiles<a class="headerlink" href="#otras-herramientas-necesarias-utiles" title="Link to this heading">#</a></h2>
+<section id="generador-de-senales-pseudo-aleatorias-binarias">
+<h3>Generador de señales pseudo aleatorias binarias:<a class="headerlink" href="#generador-de-senales-pseudo-aleatorias-binarias" title="Link to this heading">#</a></h3>
+<p>Es una paquete de Python para generar señales pseudo aleatorias binarias. Actualmente está en desarrollo, pero puede descargarse una versión de pruebas desde el repositorio de pruebas de paquetes Python. Para instalarlo en sus maquines pueden hacerlo abriendo el <code class="docutils literal notranslate"><span class="pre">Prompt</span> <span class="pre">Miniforge</span></code> y ejecutando:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>activate<span class="w"> </span>dyc
+pip<span class="w"> </span>install<span class="w"> </span>-i<span class="w"> </span>https://test.pypi.org/simple/<span class="w"> </span>prbs-generator
+</pre></div>
+</div>
+<p>Una vez instalado, podemos generar una onda pseudo aleatoria binaria con el siguiente código:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">prbs.prbs</span><span class="w"> </span><span class="kn">import</span> <span class="n">prbs</span>
+<span class="n">signal</span><span class="o">=</span><span class="n">prbs</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Esto genera una señal pseudo aleatoria de dimensión 1000 con valores en multiplicidad <span class="math notranslate nohighlight">\(n.12\)</span> con <span class="math notranslate nohighlight">\(n=1\ldots\)</span>, resultando en un espectro plano en las frecuencias <span class="math notranslate nohighlight">\(\left[0,\dfrac{F_s}{2\cdot 12}\right]\)</span>, siendo <span class="math notranslate nohighlight">\(F_s\)</span> la frecuencia de muestro.</p>
+</section>
 </section>
 </section>
 
@@ -472,6 +493,10 @@ mamba<span class="w"> </span>install<span class="w"> </span>spyder
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalar-miniforge">Instalar Miniforge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-de-las-herramientas-especificas-del-curso">Instalación de las herramientas especificas del curso</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaces-de-programacion">Interfaces de programación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-herramientas-necesarias-utiles">Otras herramientas necesarias/útiles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generador-de-senales-pseudo-aleatorias-binarias">Generador de señales pseudo aleatorias binarias:</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
