@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -56,7 +56,7 @@
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script src="../../_static/translations.js?v=d190bf04"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -171,7 +171,9 @@
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="correlacion.html">Correlación en tiempo discreto</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analisis_frecuencial_en_tiempo_discreto.html">Análisis frecuencial de señales en tiempo discreto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transf_fourier_discreta.html">Análisis frecuencial de señales usando ventanas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cuadernos_clases/01-sampleo_tono_puro.html">Cuaderno clase 1</a></li>
 </ul>
 
@@ -562,79 +564,8 @@ Según los objetivos del filtro existen distintos tipos entre los cuales podemos
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="ne">KeyboardInterrupt</span>: 
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">control</span><span class="w"> </span><span class="kn">import</span> <span class="n">tf</span><span class="p">,</span> <span class="n">bode</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.signal</span><span class="w"> </span><span class="kn">import</span> <span class="n">iirdesign</span><span class="p">,</span> <span class="n">iirfilter</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<span class="n">File</span> <span class="o">~</span>\<span class="n">miniforge3</span>\<span class="n">envs</span>\<span class="n">dyc</span>\<span class="n">Lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">control</span>\<span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">77</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.nlsys</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.lti</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="ne">---&gt; </span><span class="mi">77</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.statesp</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">     </span><span class="mi">78</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.xferfcn</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">     </span><span class="mi">79</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.frdata</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">File</span> <span class="o">~</span>\<span class="n">miniforge3</span>\<span class="n">envs</span>\<span class="n">dyc</span>\<span class="n">Lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">control</span>\<span class="n">statesp</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">62</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numpy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinAlgError</span><span class="p">,</span> <span class="n">eigvals</span><span class="p">,</span> <span class="n">matrix_rank</span><span class="p">,</span> <span class="n">solve</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="kn">import</span> <span class="n">rand</span><span class="p">,</span> <span class="n">randn</span>
-<span class="ne">---&gt; </span><span class="mi">62</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.signal</span><span class="w"> </span><span class="kn">import</span> <span class="n">StateSpace</span> <span class="k">as</span> <span class="n">signalStateSpace</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.signal</span><span class="w"> </span><span class="kn">import</span> <span class="n">cont2discrete</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">config</span>
-
-<span class="n">File</span> <span class="o">~</span>\<span class="n">miniforge3</span>\<span class="n">envs</span>\<span class="n">dyc</span>\<span class="n">Lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">scipy</span>\<span class="n">signal</span>\<span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">302</span>
-<span class="g g-Whitespace">    </span><span class="mi">296</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._upfirdn</span><span class="w"> </span><span class="kn">import</span> <span class="n">upfirdn</span>
-<span class="g g-Whitespace">    </span><span class="mi">298</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._spline</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">299</span>     <span class="n">sepfir2d</span>
-<span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">302</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._spline_filters</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._filter_design</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">    </span><span class="mi">304</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._fir_filter_design</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">File</span> <span class="o">~</span>\<span class="n">miniforge3</span>\<span class="n">envs</span>\<span class="n">dyc</span>\<span class="n">Lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">scipy</span>\<span class="n">signal</span>\<span class="n">_spline_filters</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">11</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># From splinemodule.c</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._spline</span><span class="w"> </span><span class="kn">import</span> <span class="n">sepfir2d</span><span class="p">,</span> <span class="n">symiirorder1_ic</span><span class="p">,</span> <span class="n">symiirorder2_ic_fwd</span><span class="p">,</span> <span class="n">symiirorder2_ic_bwd</span>
-<span class="ne">---&gt; </span><span class="mi">11</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._signaltools</span><span class="w"> </span><span class="kn">import</span> <span class="n">lfilter</span><span class="p">,</span> <span class="n">sosfilt</span><span class="p">,</span> <span class="n">lfiltic</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._arraytools</span><span class="w"> </span><span class="kn">import</span> <span class="n">axis_slice</span><span class="p">,</span> <span class="n">axis_reverse</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.interpolate</span><span class="w"> </span><span class="kn">import</span> <span class="n">BSpline</span>
-
-<span class="n">File</span> <span class="o">~</span>\<span class="n">miniforge3</span>\<span class="n">envs</span>\<span class="n">dyc</span>\<span class="n">Lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">scipy</span>\<span class="n">signal</span>\<span class="n">_signaltools</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">14</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Literal</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numpy._typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArrayLike</span>
-<span class="ne">---&gt; </span><span class="mi">14</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.spatial</span><span class="w"> </span><span class="kn">import</span> <span class="n">cKDTree</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">_sigtools</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._ltisys</span><span class="w"> </span><span class="kn">import</span> <span class="n">dlti</span>
-
-<span class="n">File</span> <span class="o">~</span>\<span class="n">miniforge3</span>\<span class="n">envs</span>\<span class="n">dyc</span>\<span class="n">Lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">scipy</span>\<span class="n">spatial</span>\<span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">116</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._plotutils</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._procrustes</span><span class="w"> </span><span class="kn">import</span> <span class="n">procrustes</span>
-<span class="ne">--&gt; </span><span class="mi">116</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._geometric_slerp</span><span class="w"> </span><span class="kn">import</span> <span class="n">geometric_slerp</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span> <span class="c1"># Deprecated namespaces, to be removed in v2.0.0</span>
-<span class="g g-Whitespace">    </span><span class="mi">119</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">ckdtree</span><span class="p">,</span> <span class="n">kdtree</span><span class="p">,</span> <span class="n">qhull</span>
-
-<span class="n">File</span> <span class="o">~</span>\<span class="n">miniforge3</span>\<span class="n">envs</span>\<span class="n">dyc</span>\<span class="n">Lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">scipy</span>\<span class="n">spatial</span>\<span class="n">_geometric_slerp</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">7</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.spatial.distance</span><span class="w"> </span><span class="kn">import</span> <span class="n">euclidean</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="kn">import</span><span class="w"> </span><span class="nn">numpy.typing</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">npt</span>
-
-<span class="n">File</span> <span class="o">~</span>\<span class="n">miniforge3</span>\<span class="n">envs</span>\<span class="n">dyc</span>\<span class="n">Lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">scipy</span>\<span class="n">spatial</span>\<span class="n">distance</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">123</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span> <span class="kn">from</span><span class="w"> </span><span class="nn">..linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">norm</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="kn">from</span><span class="w"> </span><span class="nn">..special</span><span class="w"> </span><span class="kn">import</span> <span class="n">rel_entr</span>
-<span class="ne">--&gt; </span><span class="mi">123</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">_distance_pybind</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span> <span class="k">def</span><span class="w"> </span><span class="nf">_copy_array_if_base_present</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Copy the array if its base points to a parent array.&quot;&quot;&quot;</span>
-
-<span class="ne">ImportError</span>: initialization failed
-</pre></div>
-</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\frac{6.415 \times 10^{7} s^3}{s^6 + 800.6 s^5 + 4.705 \times 10^{5} s^4 + 1.442 \times 10^{8} s^3 + 2.353 \times 10^{10} s^2 + 2.002 \times 10^{12} s + 1.25 \times 10^{14}}\]</div>
 </div>
 </div>
 </section>

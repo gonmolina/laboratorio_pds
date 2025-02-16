@@ -56,7 +56,7 @@
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script src="../../_static/translations.js?v=d190bf04"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -66,6 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'recursos/nuevo_material/transf_fourier_discreta';</script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Cuaderno clase 1" href="../cuadernos_clases/01-sampleo_tono_puro.html" />
+    <link rel="prev" title="Análisis frecuencial de señales en tiempo discreto" href="analisis_frecuencial_en_tiempo_discreto.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   <meta name="docsearch:version" content="" />
@@ -117,8 +119,6 @@
       
       
       
-        
-      
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
@@ -165,13 +165,15 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../guia_instalacion_python.html">Guía de instalación de las herramientas computacionales</a></li>
 <li class="toctree-l1"><a class="reference internal" href="senales_discretas.html">Señales en tiempo discreto</a></li>
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="correlacion.html">Correlación en tiempo discreto</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analisis_frecuencial_en_tiempo_discreto.html">Análisis frecuencial de señales en tiempo discreto</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Análisis frecuencial de señales usando ventanas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cuadernos_clases/01-sampleo_tono_puro.html">Cuaderno clase 1</a></li>
 </ul>
 
@@ -409,10 +411,10 @@ Como ya vimos:</p>
 \[\begin{split} 
 \begin{align}
 |W(\omega)|&amp;=\left\{
-  \begin{align}
+  \begin{array}{ll}
     L \omega=0&amp;\\ 
     \left|\frac{\sin(\omega L/2)}{\sin(\omega/2)}\right|&amp;\quad\text{coc}
-    \end{align}
+    \end{array}
   \right.\\
 \angle W(\omega)&amp;=-\frac{\omega}{2}(L-1)+\angle\frac{\sin(\omega L/2)}{\sin(\omega/2)}
 \end{align}
@@ -469,8 +471,10 @@ y <span class="math notranslate nohighlight">\(W(\omega-\omega_2)\)</span> se su
 <p>Sólo si <span class="math notranslate nohighlight">\(|\omega_1-\omega_2|\geq 4\pi/L\)</span>
 (donde <span class="math notranslate nohighlight">\(4\pi/L\)</span> es el ancho del lóbulo principal del espectro de la ventana rectangular)
 se verán dos lóbulos separados en el espectro <span class="math notranslate nohighlight">\(\tilde X(w)\)</span>.</p>
-<p>Es decir, <strong>la capacidad para distinguir líneas espectrales de diferente</strong>
-<strong>frecuencia está limitada por el ancho del lóbulo principal de la ventana</strong>.</p>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p>La capacidad para distinguir líneas espectrales de diferente frecuencia está limitada por el ancho del lóbulo principal de la ventana</p>
+</div>
 <p>Consideremos ahora el <strong>ejemplo</strong> de una señal con tres componentes sinusoidales, dos de ellas con frecuencias muy próximas.</p>
 <div class="math notranslate nohighlight">
 \[x(n)= \cos(0.2\omega n) + \cos(0.22\omega n) + \cos(0.6\omega n)\]</div>
@@ -798,61 +802,7 @@ rápido.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">File ~\miniforge3\envs\dyc\Lib\site-packages\scipy\io\matlab\_mio.py:39,</span> in <span class="ni">_open_file</span><span class="nt">(file_like, appendmat, mode)</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">39</span>     <span class="k">return</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_like</span><span class="p">,</span> <span class="n">mode</span><span class="p">),</span> <span class="kc">True</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span>     <span class="c1"># Probably &quot;not found&quot;</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;TP3Prob4_2022.mat&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># importa las variables que estan en el .mat en un diccionario data</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">data</span><span class="o">=</span><span class="n">loadmat</span><span class="p">(</span><span class="s1">&#39;TP3Prob4_2022.mat&#39;</span><span class="p">)</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># extraigo las variables del diccionario</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">t</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span> 
-
-<span class="nn">File ~\miniforge3\envs\dyc\Lib\site-packages\scipy\io\matlab\_mio.py:233,</span> in <span class="ni">loadmat</span><span class="nt">(file_name, mdict, appendmat, spmatrix, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">88</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">89</span><span class="sd"> Load MATLAB file.</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span><span class="sd">     3.14159265+3.14159265j])</span>
-<span class="g g-Whitespace">    </span><span class="mi">231</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="n">variable_names</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;variable_names&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">233</span> <span class="k">with</span> <span class="n">_open_file_context</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">appendmat</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span>     <span class="n">MR</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">mat_reader_factory</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span>     <span class="n">matfile_dict</span> <span class="o">=</span> <span class="n">MR</span><span class="o">.</span><span class="n">get_variables</span><span class="p">(</span><span class="n">variable_names</span><span class="p">)</span>
-
-<span class="nn">File ~\miniforge3\envs\dyc\Lib\contextlib.py:137,</span> in <span class="ni">_GeneratorContextManager.__enter__</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">137</span>     <span class="k">return</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;generator didn&#39;t yield&quot;</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
-
-<span class="nn">File ~\miniforge3\envs\dyc\Lib\site-packages\scipy\io\matlab\_mio.py:17,</span> in <span class="ni">_open_file_context</span><span class="nt">(file_like, appendmat, mode)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="nd">@contextmanager</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="k">def</span><span class="w"> </span><span class="nf">_open_file_context</span><span class="p">(</span><span class="n">file_like</span><span class="p">,</span> <span class="n">appendmat</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;rb&#39;</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">17</span>     <span class="n">f</span><span class="p">,</span> <span class="n">opened</span> <span class="o">=</span> <span class="n">_open_file</span><span class="p">(</span><span class="n">file_like</span><span class="p">,</span> <span class="n">appendmat</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span>         <span class="k">yield</span> <span class="n">f</span>
-
-<span class="nn">File ~\miniforge3\envs\dyc\Lib\site-packages\scipy\io\matlab\_mio.py:45,</span> in <span class="ni">_open_file</span><span class="nt">(file_like, appendmat, mode)</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span>     <span class="k">if</span> <span class="n">appendmat</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">file_like</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.mat&#39;</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span>         <span class="n">file_like</span> <span class="o">+=</span> <span class="s1">&#39;.mat&#39;</span>
-<span class="ne">---&gt; </span><span class="mi">45</span>     <span class="k">return</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_like</span><span class="p">,</span> <span class="n">mode</span><span class="p">),</span> <span class="kc">True</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span>         <span class="s1">&#39;Reader needs file name or open file-like object&#39;</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;TP3Prob4_2022.mat&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.uint16(8000)
 </pre></div>
 </div>
 </div>
@@ -890,6 +840,12 @@ rápido.</p></li>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Frecuencia del seno: 199.951171875, amplitud del seno: 1.0056159733403283
+</pre></div>
+</div>
+<img alt="../../_images/ddc0c14b40705637668b8da4a7f7e53c764f60867de0f6ba9c84acb9c6f5165a.png" src="../../_images/ddc0c14b40705637668b8da4a7f7e53c764f60867de0f6ba9c84acb9c6f5165a.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -916,6 +872,12 @@ rápido.</p></li>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">yfiltrada</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x24f19dc7fb0&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/76e90fbc97fad9c33485284b9df2b3185ab03c26b8af8b5c2c0a364aa7ad3b30.png" src="../../_images/76e90fbc97fad9c33485284b9df2b3185ab03c26b8af8b5c2c0a364aa7ad3b30.png" />
 </div>
 </div>
 </section>
@@ -968,6 +930,12 @@ frecuencia <code class="docutils literal notranslate"><span class="pre">val</spa
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x24f19e18f80&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/558227f989dc8d510ec2d563455935c4dcd6cd114861d76eb12fc39d3dd4a4ae.png" src="../../_images/558227f989dc8d510ec2d563455935c4dcd6cd114861d76eb12fc39d3dd4a4ae.png" />
+</div>
 </div>
 </section>
 </section>
@@ -1003,6 +971,24 @@ frecuencia <code class="docutils literal notranslate"><span class="pre">val</spa
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="analisis_frecuencial_en_tiempo_discreto.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Análisis frecuencial de señales en tiempo discreto</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../cuadernos_clases/01-sampleo_tono_puro.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Cuaderno clase 1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
