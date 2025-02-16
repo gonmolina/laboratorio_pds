@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.16.1
+    jupytext_version: 1.16.6
 kernelspec:
   display_name: dsp
   language: python
@@ -122,10 +122,10 @@ Por lo que:
 $$ 
 \begin{align}
 |W(\omega)|&=\left\{
-  \begin{align}
+  \begin{array}{ll}
     L \omega=0&\\ 
     \left|\frac{\sin(\omega L/2)}{\sin(\omega/2)}\right|&\quad\text{coc}
-    \end{align}
+    \end{array}
   \right.\\
 \angle W(\omega)&=-\frac{\omega}{2}(L-1)+\angle\frac{\sin(\omega L/2)}{\sin(\omega/2)}
 \end{align}
@@ -233,8 +233,9 @@ Sólo si $|\omega_1-\omega_2|\geq 4\pi/L$
 (donde $4\pi/L$ es el ancho del lóbulo principal del espectro de la ventana rectangular) 
 se verán dos lóbulos separados en el espectro $\tilde X(w)$.
 
-Es decir, **la capacidad para distinguir líneas espectrales de diferente**
- **frecuencia está limitada por el ancho del lóbulo principal de la ventana**.
+ ```{important}
+ La capacidad para distinguir líneas espectrales de diferente frecuencia está limitada por el ancho del lóbulo principal de la ventana
+ ```
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
@@ -363,7 +364,7 @@ $$
 
 que es muy facil de implementar con un algoritmo de computación.
 
-```{code-cell} ipython3
+```{code-cell}
 ---
 editable: true
 slideshow:
@@ -375,7 +376,7 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 ---
 editable: true
 slideshow:
@@ -391,7 +392,7 @@ def dtft(x, N):
     return (np.exp(-1j*(w@n)))@x, w
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 ---
 editable: true
 slideshow:
@@ -403,7 +404,7 @@ n=np.linspace(0, L, L, endpoint=False).reshape((L,1))
 x=0.9**n
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 ---
 editable: true
 slideshow:
@@ -414,7 +415,7 @@ X, w=dtft(x,N)
 w1=fftfreq(N, 1)*2*np.pi
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 ---
 editable: true
 slideshow:
@@ -454,7 +455,7 @@ $$X_1(\omega)=\sum_{n=0}^{\infty}(0.9e^{-j\omega})^n=\frac{1}{1-0.9e^{-j\omega}}
 
 Grafiquemos el espectro de módulo de $x_1(n)$ y de $x(n)$ para distintos valores de $L$.
 
-```{code-cell} ipython3
+```{code-cell}
 winf=np.linspace(-np.pi,np.pi,1024, endpoint=True)
 X1=1/(1-(0.9*(np.exp(-1j*winf))))
 
@@ -474,7 +475,7 @@ xl3=0.9**n3
 Xl3,_=dtft(xl3,N)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 f, ax=plt.subplots(1,1, figsize=(6,3))
 ax.plot(winf, np.abs(X1), label=r"$L=\infty$")
 ax.plot(winf, np.abs(fftshift(Xl1)),  label=r"$L=10$")
@@ -594,7 +595,7 @@ lo que representa un factor de mejora en la velocidad de 204.8.
 En Python, este algoritmo está implementado tanto en los paquetes `scipy` y `numpy`.
 La forma de uso es la misma para las dos implementaciones.
 
-```{code-cell} ipython3
+```{code-cell}
 # podemos importarla de numpy
 from numpy.fft import fft 
 # o podemos importarla de scipy
@@ -617,7 +618,7 @@ donde:
 - `N` número de frecuencias donde se calcula la transformada, que debe ser de la forma $N=2^m$ para que el algoritmo sea
 rápido.
 
-```{code-cell} ipython3
+```{code-cell}
 from scipy.io import loadmat
 from scipy.fft import fft, fftshift, fftfreq
 import numpy as np
@@ -625,7 +626,7 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 # importa las variables que estan en el .mat en un diccionario data
 data=loadmat('TP3Prob4_2022.mat') 
 # extraigo las variables del diccionario
@@ -635,7 +636,7 @@ Fs=data['Fs'][0][0]
 Fs
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 ---
 slideshow:
   slide_type: slide
@@ -650,7 +651,7 @@ absY=np.abs(Y)
 picomax=np.max(absY)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 ---
 slideshow:
   slide_type: slide
@@ -659,7 +660,7 @@ A=2*picomax/L; # amplitud de la senoide
 ind=np.where(absY==picomax)[0][0]
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 ---
 slideshow:
   slide_type: slide
@@ -672,7 +673,7 @@ ax[1].plot(fftshift(F),fftshift(absY))
 print(f"Frecuencia del seno: {Fsen}, amplitud del seno: {A}")
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 # Filtrado en el dominio FFT
 from scipy.fft import ifft
 filtro=np.zeros((N,))
@@ -682,7 +683,7 @@ for i, val in enumerate(F):
         filtro[i]=1
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 ---
 slideshow:
   slide_type: slide
@@ -736,8 +737,7 @@ Para esto el algoritmo que planteamos podría ser:
 - recorro el primer `array` y guardo cada uno de los resultados en el segundo usando el mismo indice para ambos
 - realizo la figura
 
-```{code-cell} ipython3
-
+```{code-cell}
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -754,6 +754,6 @@ for i, v in enumerate(x):
 plt.plot(x, y)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 
 ```
