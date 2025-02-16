@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="es" data-content_root="" >
+<html lang="es" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Análisis frecuencial de señales en tiempo discreto &#8212; Laboratorio de Procesamineto Digital de Señales</title>
   
@@ -15,63 +14,63 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script src="../../_static/translations.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=d190bf04"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'recursos/nuevo_material/analisis_frecuencial_en_tiempo_discreto';</script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
     <link rel="next" title="Cuaderno clase 1" href="../cuadernos_clases/01-sampleo_tono_puro.html" />
-    <link rel="prev" title="Correlación en tiempo discreto" href="correlacion.html" />
+    <link rel="prev" title="Señales en tiempo discreto" href="senales_discretas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -79,31 +78,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -111,7 +95,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,10 +102,15 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -131,7 +119,8 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -146,6 +135,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../../index.html">
   
@@ -157,7 +148,14 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">Laboratorio de Procesamineto Digital de Señales</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -170,8 +168,9 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../guia_instalacion_python.html">Guía de instalación de las herramientas computacionales</a></li>
 <li class="toctree-l1"><a class="reference internal" href="senales_discretas.html">Señales en tiempo discreto</a></li>
-<li class="toctree-l1"><a class="reference internal" href="respuesta_sistemas_LTI_TD.html">Respuesta de Sistemas LTI en Tiempo Discreto</a></li>
-<li class="toctree-l1"><a class="reference internal" href="correlacion.html">Correlación en tiempo discreto</a></li>
+
+
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Análisis frecuencial de señales en tiempo discreto</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cuadernos_clases/01-sampleo_tono_puro.html">Cuaderno clase 1</a></li>
 </ul>
@@ -182,14 +181,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -198,14 +202,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -281,27 +285,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -351,9 +347,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="analisis-frecuencial-de-senales-en-tiempo-discreto">
-<h1>Análisis frecuencial de señales en tiempo discreto<a class="headerlink" href="#analisis-frecuencial-de-senales-en-tiempo-discreto" title="Permalink to this heading">#</a></h1>
+<h1>Análisis frecuencial de señales en tiempo discreto<a class="headerlink" href="#analisis-frecuencial-de-senales-en-tiempo-discreto" title="Link to this heading">#</a></h1>
 <section id="serie-de-fourier-de-senales-en-tiempo-discreto">
-<h2>Serie de Fourier de Señales en Tiempo Discreto<a class="headerlink" href="#serie-de-fourier-de-senales-en-tiempo-discreto" title="Permalink to this heading">#</a></h2>
+<h2>Serie de Fourier de Señales en Tiempo Discreto<a class="headerlink" href="#serie-de-fourier-de-senales-en-tiempo-discreto" title="Link to this heading">#</a></h2>
 <p>Sea <span class="math notranslate nohighlight">\(x(n)\)</span> <strong>una señal periódica</strong> con período <span class="math notranslate nohighlight">\(N\)</span>, es decir:</p>
 <div class="math notranslate nohighlight">
 \[x(n)=x(n+N), \qquad \forall n\]</div>
@@ -362,7 +358,7 @@ expresarse como:</p>
 <div class="admonition-serie-de-fourier admonition">
 <p class="admonition-title">Serie de Fourier</p>
 <div class="math notranslate nohighlight" id="equation-eq1">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eq1" title="Enlace permanente a esta ecuación">#</a></span>\[
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq1" title="Link to this equation">#</a></span>\[
 \begin{equation}
 x(n)=\sum_{k=0}^{N-1}c_k e^{j\frac{2\pi kn}{N}}
 \end{equation}
@@ -379,7 +375,7 @@ N &amp; k=0,\pm N, \pm 2N, \cdots\\
 \end{array}
 \right.
 \end{split}\]</div>
-<p>Reemplazando en <a class="reference internal" href="#equation-eq1">(2)</a>, tenemos:</p>
+<p>Reemplazando en <a class="reference internal" href="#equation-eq1">(1)</a>, tenemos:</p>
 <div class="math notranslate nohighlight">
 \[x(n)e^{-j\frac{2\pi ln}{N}}=\sum_{k=0}^{N-1}c_ke^{j\frac{2\pi (k-l)n}{N}}\]</div>
 <p>Sumando sobre <span class="math notranslate nohighlight">\(n\)</span>:</p>
@@ -427,7 +423,7 @@ frecuencias:</p></li>
 <div class="math notranslate nohighlight">
 \[0\leq \omega_k=\frac{2\pi k}{N}&lt; 2\pi \quad \text{con } k=0,1, 2, \cdots, N-1\]</div>
 <section id="espectro-de-densidad-de-potencia-de-senales-periodicas-en-tiempo-discreto">
-<h3>Espectro de Densidad de Potencia de Señales Periódicas en Tiempo Discreto<a class="headerlink" href="#espectro-de-densidad-de-potencia-de-senales-periodicas-en-tiempo-discreto" title="Permalink to this heading">#</a></h3>
+<h3>Espectro de Densidad de Potencia de Señales Periódicas en Tiempo Discreto<a class="headerlink" href="#espectro-de-densidad-de-potencia-de-senales-periodicas-en-tiempo-discreto" title="Link to this heading">#</a></h3>
 <p>La potencia media de una señal periódica de período <span class="math notranslate nohighlight">\(N\)</span> es:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -447,7 +443,7 @@ frecuencias:</p></li>
 <li><p>La energía de la señal <span class="math notranslate nohighlight">\(x(n)\)</span> en un período es:</p></li>
 </ul>
 <div class="admonition-energia-en-un-periodo admonition">
-<p class="admonition-title">Energía en un período   </p>
+<p class="admonition-title">Energía en un período</p>
 <div class="math notranslate nohighlight">
 \[E_n=\sum_{n=0}^{N-1}|x(n)|^2=N\sum_{n=0}^{N-1}|c_k|^2\]</div>
 </div>
@@ -468,7 +464,7 @@ c_k^*=c_k \implies \left\{
 </div>
 </section>
 <section id="ejemplos">
-<h3>Ejemplos<a class="headerlink" href="#ejemplos" title="Permalink to this heading">#</a></h3>
+<h3>Ejemplos<a class="headerlink" href="#ejemplos" title="Link to this heading">#</a></h3>
 <ul>
 <li><div class="math notranslate nohighlight">
 \[x(n)=\cos\sqrt{2}\pi n\]</div>
@@ -496,7 +492,7 @@ componente de frecuencia <span class="math notranslate nohighlight">\(\omega=\om
 </section>
 </section>
 <section id="transformada-de-fourier-en-tiempo-discreto">
-<h2>Transformada de Fourier en Tiempo Discreto<a class="headerlink" href="#transformada-de-fourier-en-tiempo-discreto" title="Permalink to this heading">#</a></h2>
+<h2>Transformada de Fourier en Tiempo Discreto<a class="headerlink" href="#transformada-de-fourier-en-tiempo-discreto" title="Link to this heading">#</a></h2>
 <p>La DTFT (Discrete Time Fourier Transform) de una señal <span class="math notranslate nohighlight">\(x(n)\)</span> de <strong>energía finita</strong> se define como:</p>
 <div class="admonition-transformada-de-fourier-en-tiempo-discreto admonition">
 <p class="admonition-title">Transformada de Fourier en Tiempo Discreto</p>
@@ -523,7 +519,7 @@ componente de frecuencia <span class="math notranslate nohighlight">\(\omega=\om
 \[x(n)=c_{-n}=\frac{1}{2\pi}\int_{-\pi}^{\pi} X(\omega)e^{j\omega n}d\omega\]</div>
 </div>
 <section id="convergencia-de-la-dftf">
-<h3>Convergencia de la DFTF<a class="headerlink" href="#convergencia-de-la-dftf" title="Permalink to this heading">#</a></h3>
+<h3>Convergencia de la DFTF<a class="headerlink" href="#convergencia-de-la-dftf" title="Link to this heading">#</a></h3>
 <p>Definamos:</p>
 <div class="math notranslate nohighlight">
 \[X_N(\omega)=\sum_{n=-N}^{N}x(n)e^{-j\omega n}\]</div>
@@ -550,7 +546,7 @@ componente de frecuencia <span class="math notranslate nohighlight">\(\omega=\om
 </ul>
 </section>
 <section id="ejemplo-dtft-cuadrada">
-<h3>Ejemplo DTFT cuadrada<a class="headerlink" href="#ejemplo-dtft-cuadrada" title="Permalink to this heading">#</a></h3>
+<h3>Ejemplo DTFT cuadrada<a class="headerlink" href="#ejemplo-dtft-cuadrada" title="Link to this heading">#</a></h3>
 <p>Supongamos que la señal <span class="math notranslate nohighlight">\(x(n)\)</span> tiene DFTF,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -595,7 +591,7 @@ X_N(\omega)=\sum_{n=-N}^{N}\frac{\sin(\omega_cn)}{\pi n} e^{-j\omega n }
 Cuando <span class="math notranslate nohighlight">\(N\)</span> aumenta, la oscilación es mas rápida y cuando <span class="math notranslate nohighlight">\(N\rightarrow\infty\)</span> la oscilación converge al punto de discontinuidad <span class="math notranslate nohighlight">\(\omega=\omega_c\)</span>, pero su amplitud no va a cero. Este fenómeno oscilatorio de <span class="math notranslate nohighlight">\(X_N(\omega)\)</span> se denomina fenómeno de Gibbs.</p>
 </section>
 <section id="espectro-de-densidad-de-energia-de-senales-aperiodicas">
-<h3>Espectro de Densidad de Energía de Señales Aperiódicas<a class="headerlink" href="#espectro-de-densidad-de-energia-de-senales-aperiodicas" title="Permalink to this heading">#</a></h3>
+<h3>Espectro de Densidad de Energía de Señales Aperiódicas<a class="headerlink" href="#espectro-de-densidad-de-energia-de-senales-aperiodicas" title="Link to this heading">#</a></h3>
 <p>La energía de la señal <span class="math notranslate nohighlight">\(x(n)\)</span> es:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
@@ -644,7 +640,7 @@ X^{*}(\omega)=X(\omega)\implies \left\{
 </ul>
 </section>
 <section id="ejemplo-densidad-espectral-de-energia-de-una-senal-exponencial">
-<h3>Ejemplo: densidad espectral de energía de una señal exponencial<a class="headerlink" href="#ejemplo-densidad-espectral-de-energia-de-una-senal-exponencial" title="Permalink to this heading">#</a></h3>
+<h3>Ejemplo: densidad espectral de energía de una señal exponencial<a class="headerlink" href="#ejemplo-densidad-espectral-de-energia-de-una-senal-exponencial" title="Link to this heading">#</a></h3>
 <p>Calcule y grafique el espectro de densidad de energía <span class="math notranslate nohighlight">\(S_{xx}(\omega)\)</span> de la señal:</p>
 <div class="math notranslate nohighlight">
 \[x(\omega)=a^{n}\mu(n), \quad 0&lt;a&lt;1\]</div>
@@ -668,10 +664,10 @@ S_{xx}&amp;=\left|X(\omega)\right|^2=\left|\frac{1}{1+a\cos(\omega)+ja\sin(\omeg
 <p>Implementamos un código de Python que utilice el resultado obtenido para calcular <span class="math notranslate nohighlight">\(S_{xx}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="k">def</span> <span class="nf">espectro1</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.8</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">espectro1</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.8</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -681,7 +677,7 @@ S_{xx}&amp;=\left|X(\omega)\right|^2=\left|\frac{1}{1+a\cos(\omega)+ja\sin(\omeg
 <p>En el siguiente bloque de código calculamos <span class="math notranslate nohighlight">\(S_{xx}\)</span> para valores de <span class="math notranslate nohighlight">\(\omega\)</span> distribuidos de manera lineal entre <span class="math notranslate nohighlight">\(-\pi\)</span> y <span class="math notranslate nohighlight">\(\pi\)</span> y los graficamos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">omega</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1001</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">sxx1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">omega</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -697,12 +693,12 @@ S_{xx}&amp;=\left|X(\omega)\right|^2=\left|\frac{1}{1+a\cos(\omega)+ja\sin(\omeg
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/56364997754f25d9bf5ef45d36e305fd0921084190f92ac4c26da6b8f5ba519e.png" src="../../_images/56364997754f25d9bf5ef45d36e305fd0921084190f92ac4c26da6b8f5ba519e.png" />
+<img alt="../../_images/b812c7fbcf00d93ab8055b29135be2b576c3e2abe3906d1c301ad0ea9e0c5f70.png" src="../../_images/b812c7fbcf00d93ab8055b29135be2b576c3e2abe3906d1c301ad0ea9e0c5f70.png" />
 </div>
 </div>
 </section>
 <section id="ejemplo-densidad-espectral-de-energia-de-una-senal-cuadrada">
-<h3>Ejemplo: densidad espectral de energía de una señal cuadrada<a class="headerlink" href="#ejemplo-densidad-espectral-de-energia-de-una-senal-cuadrada" title="Permalink to this heading">#</a></h3>
+<h3>Ejemplo: densidad espectral de energía de una señal cuadrada<a class="headerlink" href="#ejemplo-densidad-espectral-de-energia-de-una-senal-cuadrada" title="Link to this heading">#</a></h3>
 <p>Determine la DTFT y el espectro de densidad de energía de la señal:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -729,7 +725,7 @@ x(n)=\left\{
 \[S_{xx}=|X(\omega)|^2 = A^2 \frac{\sin^2(\omega L/2)}{\sin^2(\omega/2)}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">espectro2</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">espectro2</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">sxx</span><span class="o">=</span><span class="p">(</span><span class="n">A</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">L</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">w</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">xw</span><span class="o">=</span><span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w</span><span class="o">*</span><span class="p">(</span><span class="n">L</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">L</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">w</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">sxx</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">xw</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">xw</span><span class="p">)</span>
@@ -766,7 +762,7 @@ x(n)=\left\{
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/73ccfa4c49b324794d9337641d368730f613a834c4d4044d722799ec6b109907.png" src="../../_images/73ccfa4c49b324794d9337641d368730f613a834c4d4044d722799ec6b109907.png" />
+<img alt="../../_images/3e4feebf3484e66e5c498fb0c1e331fb378e59bf312e1daa6c49e569e7f1fbeb.png" src="../../_images/3e4feebf3484e66e5c498fb0c1e331fb378e59bf312e1daa6c49e569e7f1fbeb.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -786,7 +782,7 @@ x(n)=\left\{
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0c29e88309f6614cc0827991e8dad6f87e35820835349f16a457dec48c9d52ac.png" src="../../_images/0c29e88309f6614cc0827991e8dad6f87e35820835349f16a457dec48c9d52ac.png" />
+<img alt="../../_images/157cf61a753fff1ee2536ba14a8f7a4fee322a5bbacf70bb323e7277897acd1b.png" src="../../_images/157cf61a753fff1ee2536ba14a8f7a4fee322a5bbacf70bb323e7277897acd1b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -806,13 +802,13 @@ x(n)=\left\{
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5b32932629fe7220134a609af4351142f7ed76190d909816fe4866454c21dad4.png" src="../../_images/5b32932629fe7220134a609af4351142f7ed76190d909816fe4866454c21dad4.png" />
+<img alt="../../_images/e4ca063f26db748745c0cc1b73dcc6ea0b6528b32d258907a69fb8fe085c36f1.png" src="../../_images/e4ca063f26db748745c0cc1b73dcc6ea0b6528b32d258907a69fb8fe085c36f1.png" />
 </div>
 </div>
 <p>Podemos notar que pendiente abrupta en la fase se da en <span class="math notranslate nohighlight">\(\pm \frac{2\pi}{L}\)</span> y que los máximos de amplitud son valores iguales a <span class="math notranslate nohighlight">\(L.A\)</span>.</p>
 </section>
 <section id="propiedades-de-la-dtft">
-<h3>Propiedades de la DTFT<a class="headerlink" href="#propiedades-de-la-dtft" title="Permalink to this heading">#</a></h3>
+<h3>Propiedades de la DTFT<a class="headerlink" href="#propiedades-de-la-dtft" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Linealidad</p></li>
 </ul>
@@ -871,7 +867,7 @@ x(n)=\left\{
 </div>
 </section>
 <section id="dtft-de-senales-periodicas">
-<h3>DTFT de Señales Periódicas<a class="headerlink" href="#dtft-de-senales-periodicas" title="Permalink to this heading">#</a></h3>
+<h3>DTFT de Señales Periódicas<a class="headerlink" href="#dtft-de-senales-periodicas" title="Link to this heading">#</a></h3>
 <p>Si se admiten como posibles transformadas los <strong>impulsos</strong>, puede ampliarse la clase de funciones en tiempo que son transformables Fourier para incluir a las funciones periódicas.</p>
 <p>Consideremos la señal periódica senoidal</p>
 <div class="math notranslate nohighlight">
@@ -905,7 +901,7 @@ X(\omega)=2\pi\sum_{k=0}^{N-1}c_k\sum_{l=-\infty}^{\infty}\delta\left(\omega\dfr
 <p>Es decir que la Transformada de Fourier de una señal periódica puede calcularse en forma directa a partir de sus coeficientes de Fourier <span class="math notranslate nohighlight">\(c_k\)</span>.</p>
 </section>
 <section id="ejemplo-senal-senoidal">
-<h3>Ejemplo señal senoidal<a class="headerlink" href="#ejemplo-senal-senoidal" title="Permalink to this heading">#</a></h3>
+<h3>Ejemplo señal senoidal<a class="headerlink" href="#ejemplo-senal-senoidal" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[x(n)=\cos\omega_0n=\frac{1}{2}e^{j\omega_0n}+\frac{1}{2}e^{-j\omega_0n}\]</div>
 <p>La transformada de Fourier resulta entonces:</p>
@@ -913,7 +909,7 @@ X(\omega)=2\pi\sum_{k=0}^{N-1}c_k\sum_{l=-\infty}^{\infty}\delta\left(\omega\dfr
 \[X(\omega)=\pi\sum_{l=-\infty}^{\infty}\delta(\omega-\omega_0-2\pi l)+\pi \sum_{l=\infty}^{\infty}\delta(\omega+\omega_0-2\pi l)\]</div>
 </section>
 <section id="ejemplo-tren-de-impulsos">
-<h3>Ejemplo tren de impulsos<a class="headerlink" href="#ejemplo-tren-de-impulsos" title="Permalink to this heading">#</a></h3>
+<h3>Ejemplo tren de impulsos<a class="headerlink" href="#ejemplo-tren-de-impulsos" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[x(n)=\sum_{k=-\infty}^{\infty}\delta(n-kN)\]</div>
 <p>Los coeficientes de Fourier resultan</p>
@@ -939,7 +935,7 @@ X(\omega)=2\pi\sum_{k=0}^{N-1}c_k\sum_{l=-\infty}^{\infty}\delta\left(\omega\dfr
         },
         kernelOptions: {
             name: "python3",
-            path: "./recursos/nuevo_material"
+            path: "./recursos\nuevo_material"
         },
         predefinedOutput: true
     }
@@ -953,16 +949,16 @@ X(\omega)=2\pi\sum_{k=0}^{N-1}c_k\sum_{l=-\infty}^{\infty}\delta\left(\omega\dfr
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="correlacion.html"
+       href="senales_discretas.html"
        title="página anterior">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">Correlación en tiempo discreto</p>
+        <p class="prev-next-title">Señales en tiempo discreto</p>
       </div>
     </a>
     <a class="right-next"
@@ -981,7 +977,8 @@ X(\omega)=2\pi\sum_{k=0}^{N-1}c_k\sum_{l=-\infty}^{\infty}\delta\left(\omega\dfr
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1055,8 +1052,8 @@ Por Somebody
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

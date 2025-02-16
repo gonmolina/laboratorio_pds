@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
-# Señales en tiempo discreto 
+## Señales en tiempo discreto 
 
 Están definidas sólo en valores discretos de tiempo. Los instantes de tiempo no necesariamente están equiespaciados.
 
@@ -223,7 +223,7 @@ A $F_N\triangleq 2B$ se la denomina Tasa de muestreo de Nyquist
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-### Ejemplo 1
+### Ejemplo
 
 Determinar la tasa de muestreo de Nyquist 
 
@@ -243,7 +243,7 @@ que son idénticamente nulas y obviamente no puede recuperarse la señal a parti
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-### Ejemplo 2
+### Ejemplo 
 
 Supongamos que desea generar y graficar las señales en tiempo continuo $x_1(t)$ y $x_2(t)$ definidas como:
 
