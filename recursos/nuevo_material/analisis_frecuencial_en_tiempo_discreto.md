@@ -5,7 +5,11 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.16.1
+    jupytext_version: 1.16.6
+kernelspec:
+  display_name: dyc
+  language: python
+  name: python3
 ---
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
@@ -414,7 +418,7 @@ $$
 
 Implementamos un código de Python que utilice el resultado obtenido para calcular $S_{xx}$.
 
-```{code-cell} ipython3
+```{code-cell}
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -426,7 +430,7 @@ La función anterior nos devuelve el valor de $S_{xx}$ para un $\omega$ y un $a$
 
 En el siguiente bloque de código calculamos $S_{xx}$ para valores de $\omega$ distribuidos de manera lineal entre $-\pi$ y $\pi$ y los graficamos.
 
-```{code-cell} ipython3
+```{code-cell}
 import numpy as np
 omega=np.linspace(-np.pi, np.pi, 1001, endpoint=True)
 
@@ -470,7 +474,7 @@ El espectro de densidad de energía resulta:
 
 $$S_{xx}=|X(\omega)|^2 = A^2 \frac{\sin^2(\omega L/2)}{\sin^2(\omega/2)}$$
 
-```{code-cell} ipython3
+```{code-cell}
 def espectro2(w, L=10, A=1):
     sxx=(A**2)*(np.sin(w*L/2)**2)/(np.sin(w/2)**2)
     xw=A*(np.exp(-1j*w*(L-1)/2))*np.sin(w*L/2)/np.sin(w/2)
@@ -489,7 +493,7 @@ for i, w in enumerate(omega):
     sxx23[i,:]=espectro2(w, L=100)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 fig, ax=plt.subplots(3,1, figsize=(6,6))
 ax[0].set_title("Espectro de densidad de energía")
 ax[0].plot(omega, sxx21[:,0], label="L=10")
@@ -503,7 +507,7 @@ for i in ax:
     i.grid()
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 fig, ax=plt.subplots(3,1, figsize=(6,6))
 ax[0].set_title("Espectro de amplitud")
 ax[0].plot(omega, sxx21[:,1], label="L=10")
@@ -517,7 +521,7 @@ for i in ax:
     i.grid()
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 fig, ax=plt.subplots(3,1, figsize=(6,6))
 ax[0].set_title("Espectro de fase")
 ax[0].plot(omega, sxx21[:,2], label="L=10")

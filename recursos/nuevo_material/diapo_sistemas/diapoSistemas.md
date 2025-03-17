@@ -42,10 +42,10 @@ Hipótesis del modelo:
 Un posible modelo que verifica estas hipótesis es el de **Lotka-Volterra**
 
 $$
-\begin{align*}
-\frac{dP(t)}{dt}&=\alpha_1P(t)-\alpha_2D(t)P(t)\\
-\frac{dD(t)}{dt}&=\alpha_3P(t)D(t)-\alpha_4D(t)
-\end{align*}
+  \begin{align*}
+    \frac{dP(t)}{dt}&=\alpha_1P(t)-\alpha_2D(t)P(t)\\
+    \frac{dD(t)}{dt}&=\alpha_3P(t)D(t)-\alpha_4D(t)
+  \end{align*}
 $$
 
 #### Ejercicio análisis entrada/salida
