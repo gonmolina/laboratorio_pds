@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.16.1
+    jupytext_version: 1.16.6
 kernelspec:
   display_name: dsp
   language: python
@@ -24,7 +24,7 @@ Donde:
 - $\alpha$: coeficiente de atenuación
 - $D$: retardo
 
-```{code-cell} ipython3
+```{code-cell}
 from prbs.prbs import prbs
 from scipy.signal import correlate
 from numpy.random import normal
@@ -33,7 +33,7 @@ import matplotlib.pyplot as plt
 %matplotlib widget
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 x= prbs(1000, 12)       # señal pseudo aleatoria binaria
 x[x==0]=-1
 rxx=correlate(x,x)      # autocorrelacion de x(n)
@@ -53,7 +53,7 @@ for i in ax:
 f.tight_layout()
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 alpha=0.3; # coeficiente de atenuacion
 w=normal(0, 1, (1000,))     # ruido blanco Gaussiano de media 0 y desviación standard unidad
 
@@ -65,7 +65,7 @@ ax.grid()
 f.tight_layout()
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 y=alpha * hstack((zeros((100, ), dtype=int), x[0:-100]))+w    # señal recibida
 
 Ey=sum(y**2)           # energia de la señal x(n)
@@ -79,7 +79,7 @@ ax.grid()
 f.tight_layout()
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 ryx = correlate(y,x)                                           # correlacion cruzada
 
 f,ax=plt.subplots(1,1)
