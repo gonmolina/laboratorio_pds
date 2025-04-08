@@ -1,0 +1,600 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Trabajo Análisis Frecuencial de Señales &#8212; Laboratorio de Procesamineto Digital de Señales</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'clases/trabajo_dtft';</script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Laboratorio de Procesamineto Digital de Señales</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Material de Laboratorio de Procesamiento Digital de Señales
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../recursos/guia_instalacion_python.html">Guía de instalación de las herramientas computacionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recursos/nuevo_material/senales_discretas.html">Señales en tiempo discreto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recursos/nuevo_material/correlacion.html">Correlación en tiempo discreto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recursos/nuevo_material/ejemplo_radar.html">Ejemplo radar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recursos/nuevo_material/analisis_frecuencial_en_tiempo_discreto.html">Análisis frecuencial de señales en tiempo discreto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recursos/nuevo_material/welch_teoria.html">Periodograma estándar: Relación entre N y varianza</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../recursos/nuevo_material/diapo_sistemas/diapoSistemas.html">Sistemas dinámicos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recursos/nuevo_material/respuesta_sistemas_LTI_TD.html">Respuesta de Sistemas LTI en Tiempo Discreto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recursos/cuadernos_clases/01-sampleo_tono_puro.html">Cuaderno clase 1</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/clases/trabajo_dtft.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Trabajo Análisis Frecuencial de Señales</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estudio-de-la-dtft">Estudio de la DTFT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-la-dtft">Definición de la DTFT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-de-calculo-de-la-dtft">Problemas de cálculo de la DTFT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-de-calculo-de-dtft">Problemas de cálculo de DTFT</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-1">Problema 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-2">Problema 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-3">Problema 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-4">Problema 4</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="trabajo-analisis-frecuencial-de-senales">
+<h1>Trabajo Análisis Frecuencial de Señales<a class="headerlink" href="#trabajo-analisis-frecuencial-de-senales" title="Permalink to this heading">#</a></h1>
+<section id="objetivos">
+<h2>Objetivos<a class="headerlink" href="#objetivos" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Estudiar el uso de la Transformada de Fourier en Tiempo Discreto (DTFT)</p></li>
+<li><p>Implementación en Python de algoritmos de cálculo de la Transformada de Fourier en Tiempo Discreto</p></li>
+<li><p>Estudio de la performance de los diferentes tipos de ventanas.</p></li>
+</ul>
+</section>
+<section id="estudio-de-la-dtft">
+<h2>Estudio de la DTFT<a class="headerlink" href="#estudio-de-la-dtft" title="Permalink to this heading">#</a></h2>
+<p>Se puede calcular en forma exacta si la señal es finita y se puede calcular la suma de la serie de Fourier. En general, se calcula de forma aproximada mediante la Transformada de Fourier Discreta (DFT) que es una versión discreta de la DTFT.</p>
+</section>
+<section id="definicion-de-la-dtft">
+<h2>Definición de la DTFT<a class="headerlink" href="#definicion-de-la-dtft" title="Permalink to this heading">#</a></h2>
+<p>Para una señal en tiempo discreto <span class="math notranslate nohighlight">\(x[n]\)</span> la DTFT se define como:</p>
+<div class="math notranslate nohighlight">
+\[ X(\omega) = \sum_{n=-\infty}^{\infty} x[n] e^{-j \omega n}; \quad -\pi\leq\omega\leq\pi \]</div>
+<p><span class="math notranslate nohighlight">\(X(\omega)\)</span> es una función a valores complejos y periódica de período fundamental <span class="math notranslate nohighlight">\(2\pi\)</span>.</p>
+<section id="problemas-de-calculo-de-la-dtft">
+<h3>Problemas de cálculo de la DTFT<a class="headerlink" href="#problemas-de-calculo-de-la-dtft" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>No es posible usar la expresión anterior para calcular la DTFT para señales de longitud infinita, ya que Python solo puede manipular un numéro finitos de valores.</p></li>
+</ul>
+<div class="caution admonition">
+<p class="admonition-title">Excepción</p>
+<p>Caso en que pueda obtenerse una expresión analítica de la DTFT, que pueda usarse para el cómputo.</p>
+</div>
+</section>
+<section id="problemas-de-calculo-de-dtft">
+<h3>Problemas de cálculo de DTFT<a class="headerlink" href="#problemas-de-calculo-de-dtft" title="Permalink to this heading">#</a></h3>
+<p>La DTFT es una función continua de la frecuencia en el intervalo <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>. Para el cálculo con Python esto representa un problema de muestreo en frecuencia.</p>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p>Realiza el cálculo en un número finito de puntos en el intervalo de frecuencias <span class="math notranslate nohighlight">\([-\pi, \pi]\)</span> para obtener una aproximación suave de la DTFT.</p>
+</div>
+<p>Generalmente se toman frecuencias equiespaciadas en el intervalo <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>, es decir:</p>
+<div class="math notranslate nohighlight">
+\[\omega_k = \frac{2\pi k}{N}; \quad k = 0, 1, \ldots, N-1\]</div>
+<p>donde <span class="math notranslate nohighlight">\(N\)</span> es el número de puntos en frecuencia. Con lo que resulta:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+X(\omega_k) &amp; = \sum_{n=-\infty}^{\infty} x(n) e^{-j \omega_k n}\\
+&amp; = \sum_{n=-\infty}^{\infty} x(n) e^{-j \frac{2\pi k}{N}n}; \quad k = 0, 1, \ldots, N-1
+\end{align*}
+\end{split}\]</div>
+<p>Esta expresión todavía no es calculable, salvo par señales de longitud finita. En este caso, si la señal es de longitud finita <span class="math notranslate nohighlight">\(L\)</span>, tenemos:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+X(\omega_k) = &amp;= \sum_{n=0}^{L-1} x(n) e^{-j \omega_k n}\\
+&amp;= \sum_{n=0}^{L-1} x(n) e^{-j \frac{2\pi k}{N}n}; \quad k = 0, 1, \ldots, N-1
+\end{align*}
+\end{split}\]</div>
+<p>Evaluando la expresión anterior para <span class="math notranslate nohighlight">\(k = 0, 1, \ldots, N-1\)</span> se obtiene una aproximación de la DTFT en <span class="math notranslate nohighlight">\(N\)</span> puntos en el intervalo <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[X(\omega_0)= x(0)e^{-j\omega_00} + x(1)e^{-j\omega_01} + \ldots + x(L-1)e^{-j\omega_0(L-1)}\]</div>
+<div class="math notranslate nohighlight">
+\[X(\omega_1)= x(0)e^{-j\omega_10} + x(1)e^{-j\omega_11} + \ldots + x(L-1)e^{-j\omega_1(L-1)}\]</div>
+<div class="math notranslate nohighlight">
+\[X(\omega_2)= x(0)e^{-j\omega_20} + x(1)e^{-j\omega_21} + \ldots + x(L-1)e^{-j\omega_2(L-1)}\]</div>
+<div class="math notranslate nohighlight">
+\[\vdots\]</div>
+<div class="math notranslate nohighlight">
+\[X(\omega_{N-1})= x(0)e^{-j\omega_{N-1}0} + x(1)e^{-j\omega_{N-1}1} + \ldots + x(L-1)e^{-j\omega_{N-1}(L-1)}\]</div>
+<p>Escribiendo en forma matricial la expresión anterior se obtiene:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+X(\omega_0)\\
+X(\omega_1)\\
+\vdots\\
+X(\omega_{N-1})
+\end{bmatrix}
+=
+\begin{bmatrix}
+e^{-j\omega_00} &amp; e^{-j\omega_01} &amp; \ldots &amp; e^{-j\omega_0(L-1)}\\
+e^{-j\omega_10} &amp; e^{-j\omega_11} &amp; \ldots &amp; e^{-j\omega_1(L-1)}\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+e^{-j\omega_{N-1}0} &amp; e^{-j\omega_{N-1}1} &amp; \ldots &amp; e^{-j\omega_{N-1}(L-1)}
+\end{bmatrix}
+\begin{bmatrix}
+x(0)\\
+x(1)\\
+\vdots\\
+x(L-1)
+\end{bmatrix}
+\end{split}\]</div>
+</section>
+</section>
+<section id="problema-1">
+<h2>Problema 1<a class="headerlink" href="#problema-1" title="Permalink to this heading">#</a></h2>
+<p>Implementar una función que calcule la DTFT de una señal en tiempo discreto. La función debe tener la siguiente forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dtft</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cálculo de la DTFT de una señal en tiempo discreto</span>
+<span class="sd">    </span>
+<span class="sd">    Parámetros</span>
+<span class="sd">    - x: np.array. Señal en tiempo discreto</span>
+<span class="sd">    - N: int. Número de puntos en frecuencia</span>
+<span class="sd">    </span>
+<span class="sd">    Retorna</span>
+<span class="sd">    - X: np.array. DTFT de la señal x</span>
+<span class="sd">    - w: np.array. Frecuencias en el intervalo [-pi, pi)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</section>
+<section id="problema-2">
+<h2>Problema 2<a class="headerlink" href="#problema-2" title="Permalink to this heading">#</a></h2>
+<p>Comparación de las diferentes ventanas utilizadas normalmente para el truncamiento de señales de duración infinita. Estudiar las siguientes ventanas:</p>
+<ul class="simple">
+<li><p>Rectangular (<code class="docutils literal notranslate"><span class="pre">boxcar</span></code>)</p></li>
+<li><p>Hann (<code class="docutils literal notranslate"><span class="pre">hann</span></code>)</p></li>
+<li><p>Hamming (<code class="docutils literal notranslate"><span class="pre">hamming</span></code>)</p></li>
+</ul>
+<p>Utilizar 3 dimensiones de ventanas diferentes (10, 20, 100) y comparar las formas de cada una en el dominio del tiempo y en el dominio de la frecuencia. Para el dominio de frecuencias, calcularlas usando 2048 puntos en el intervalo <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>.</p>
+</section>
+<section id="problema-3">
+<h2>Problema 3<a class="headerlink" href="#problema-3" title="Permalink to this heading">#</a></h2>
+<p>Utilizar la función <code class="docutils literal notranslate"><span class="pre">fft</span></code> de Python del paquete <code class="docutils literal notranslate"><span class="pre">scipy</span></code> para realizar los mismos cálculos del Problema 2. Comparar los resultados obtenidos con la función <code class="docutils literal notranslate"><span class="pre">dtft</span></code> implementada en el Problema 1.</p>
+</section>
+<section id="problema-4">
+<h2>Problema 4<a class="headerlink" href="#problema-4" title="Permalink to this heading">#</a></h2>
+<p>El archivo de datos <code class="docutils literal notranslate"><span class="pre">data.mat</span></code> contiene un vector <span class="math notranslate nohighlight">\(x\)</span> que consiste de las muestras de una señal inmersa en ruido, muestreada con una frecuencia de <span class="math notranslate nohighlight">\(F_s=1\)</span> KHz.
+Se asume que el ruido es blanco Gaussiano.
+Usar la función fft de Matlab para calcular y graficar la DTFT de la señal <span class="math notranslate nohighlight">\(x\)</span>, usando una ventana de longitud apropiada.
+Estudiar el uso de diferentes ventanas y de longitudes de ventana.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./clases"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estudio-de-la-dtft">Estudio de la DTFT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-la-dtft">Definición de la DTFT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-de-calculo-de-la-dtft">Problemas de cálculo de la DTFT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-de-calculo-de-dtft">Problemas de cálculo de DTFT</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-1">Problema 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-2">Problema 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-3">Problema 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-4">Problema 4</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Somebody
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

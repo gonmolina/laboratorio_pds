@@ -1,0 +1,82 @@
+Traceback (most recent call last):
+  File "/home/gonza/miniforge3/envs/dsp/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/gonza/miniforge3/envs/dsp/lib/python3.12/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gonza/miniforge3/envs/dsp/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gonza/miniforge3/envs/dsp/lib/python3.12/asyncio/base_events.py", line 685, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/gonza/miniforge3/envs/dsp/lib/python3.12/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/home/gonza/miniforge3/envs/dsp/lib/python3.12/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/gonza/miniforge3/envs/dsp/lib/python3.12/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+mat_file= loadmat(os.path.join(cwd, "clases", "data1.mat"))
+t=mat_file['t']
+y=mat_file['y']
+fs=mat_file['Fs'][0,0]
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+File [0;32m~/miniforge3/envs/dsp/lib/python3.12/site-packages/scipy/io/matlab/_mio.py:39[0m, in [0;36m_open_file[0;34m(file_like, appendmat, mode)[0m
+[1;32m     38[0m [38;5;28;01mtry[39;00m:
+[0;32m---> 39[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mopen[39;49m[43m([49m[43mfile_like[49m[43m,[49m[43m [49m[43mmode[49m[43m)[49m, [38;5;28;01mTrue[39;00m
+[1;32m     40[0m [38;5;28;01mexcept[39;00m [38;5;167;01mOSError[39;00m [38;5;28;01mas[39;00m e:
+[1;32m     41[0m     [38;5;66;03m# Probably "not found"[39;00m
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/home/gonza/Documents/materias/laboratorio_pds/clases/clases/data1.mat'
+
+During handling of the above exception, another exception occurred:
+
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Cell [0;32mIn[3], line 1[0m
+[0;32m----> 1[0m mat_file[38;5;241m=[39m [43mloadmat[49m[43m([49m[43mos[49m[38;5;241;43m.[39;49m[43mpath[49m[38;5;241;43m.[39;49m[43mjoin[49m[43m([49m[43mcwd[49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mclases[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mdata1.mat[39;49m[38;5;124;43m"[39;49m[43m)[49m[43m)[49m
+[1;32m      2[0m t[38;5;241m=[39mmat_file[[38;5;124m'[39m[38;5;124mt[39m[38;5;124m'[39m]
+[1;32m      3[0m y[38;5;241m=[39mmat_file[[38;5;124m'[39m[38;5;124my[39m[38;5;124m'[39m]
+
+File [0;32m~/miniforge3/envs/dsp/lib/python3.12/site-packages/scipy/io/matlab/_mio.py:225[0m, in [0;36mloadmat[0;34m(file_name, mdict, appendmat, **kwargs)[0m
+[1;32m     88[0m [38;5;250m[39m[38;5;124;03m"""[39;00m
+[1;32m     89[0m [38;5;124;03mLoad MATLAB file.[39;00m
+[1;32m     90[0m 
+[0;32m   (...)[0m
+[1;32m    222[0m [38;5;124;03m    3.14159265+3.14159265j])[39;00m
+[1;32m    223[0m [38;5;124;03m"""[39;00m
+[1;32m    224[0m variable_names [38;5;241m=[39m kwargs[38;5;241m.[39mpop([38;5;124m'[39m[38;5;124mvariable_names[39m[38;5;124m'[39m, [38;5;28;01mNone[39;00m)
+[0;32m--> 225[0m [43m[49m[38;5;28;43;01mwith[39;49;00m[43m [49m[43m_open_file_context[49m[43m([49m[43mfile_name[49m[43m,[49m[43m [49m[43mappendmat[49m[43m)[49m[43m [49m[38;5;28;43;01mas[39;49;00m[43m [49m[43mf[49m[43m:[49m
+[1;32m    226[0m [43m    [49m[43mMR[49m[43m,[49m[43m [49m[43m_[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mmat_reader_factory[49m[43m([49m[43mf[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m    227[0m [43m    [49m[43mmatfile_dict[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mMR[49m[38;5;241;43m.[39;49m[43mget_variables[49m[43m([49m[43mvariable_names[49m[43m)[49m
+
+File [0;32m~/miniforge3/envs/dsp/lib/python3.12/contextlib.py:137[0m, in [0;36m_GeneratorContextManager.__enter__[0;34m(self)[0m
+[1;32m    135[0m [38;5;28;01mdel[39;00m [38;5;28mself[39m[38;5;241m.[39margs, [38;5;28mself[39m[38;5;241m.[39mkwds, [38;5;28mself[39m[38;5;241m.[39mfunc
+[1;32m    136[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 137[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mnext[39;49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mgen[49m[43m)[49m
+[1;32m    138[0m [38;5;28;01mexcept[39;00m [38;5;167;01mStopIteration[39;00m:
+[1;32m    139[0m     [38;5;28;01mraise[39;00m [38;5;167;01mRuntimeError[39;00m([38;5;124m"[39m[38;5;124mgenerator didn[39m[38;5;124m'[39m[38;5;124mt yield[39m[38;5;124m"[39m) [38;5;28;01mfrom[39;00m [38;5;28;01mNone[39;00m
+
+File [0;32m~/miniforge3/envs/dsp/lib/python3.12/site-packages/scipy/io/matlab/_mio.py:17[0m, in [0;36m_open_file_context[0;34m(file_like, appendmat, mode)[0m
+[1;32m     15[0m [38;5;129m@contextmanager[39m
+[1;32m     16[0m [38;5;28;01mdef[39;00m [38;5;21m_open_file_context[39m(file_like, appendmat, mode[38;5;241m=[39m[38;5;124m'[39m[38;5;124mrb[39m[38;5;124m'[39m):
+[0;32m---> 17[0m     f, opened [38;5;241m=[39m [43m_open_file[49m[43m([49m[43mfile_like[49m[43m,[49m[43m [49m[43mappendmat[49m[43m,[49m[43m [49m[43mmode[49m[43m)[49m
+[1;32m     18[0m     [38;5;28;01mtry[39;00m:
+[1;32m     19[0m         [38;5;28;01myield[39;00m f
+
+File [0;32m~/miniforge3/envs/dsp/lib/python3.12/site-packages/scipy/io/matlab/_mio.py:45[0m, in [0;36m_open_file[0;34m(file_like, appendmat, mode)[0m
+[1;32m     43[0m     [38;5;28;01mif[39;00m appendmat [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m file_like[38;5;241m.[39mendswith([38;5;124m'[39m[38;5;124m.mat[39m[38;5;124m'[39m):
+[1;32m     44[0m         file_like [38;5;241m+[39m[38;5;241m=[39m [38;5;124m'[39m[38;5;124m.mat[39m[38;5;124m'[39m
+[0;32m---> 45[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mopen[39;49m[43m([49m[43mfile_like[49m[43m,[49m[43m [49m[43mmode[49m[43m)[49m, [38;5;28;01mTrue[39;00m
+[1;32m     46[0m [38;5;28;01melse[39;00m:
+[1;32m     47[0m     [38;5;28;01mraise[39;00m [38;5;167;01mOSError[39;00m(
+[1;32m     48[0m         [38;5;124m'[39m[38;5;124mReader needs file name or open file-like object[39m[38;5;124m'[39m
+[1;32m     49[0m     ) [38;5;28;01mfrom[39;00m [38;5;21;01me[39;00m
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/home/gonza/Documents/materias/laboratorio_pds/clases/clases/data1.mat'
+
