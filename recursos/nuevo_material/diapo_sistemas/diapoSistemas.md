@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.16.1
+    jupytext_version: 1.16.7
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -34,8 +34,8 @@ Ambiente aislado compuesto por dos clases de individuos: presas (P: población d
 
 Hipótesis del modelo:
 
-1. En ausencia de depredadores (D=0), la población de presas crece exponencialmente.
-1. Los depredadores sólo se alimentan de presas, por lo que en ausencia de presas (P=0), la población de depredadores se extingue exponencialmente.
+1. En ausencia de depredadores ($D=0$), la población de presas crece exponencialmente.
+1. Los depredadores sólo se alimentan de presas, por lo que en ausencia de presas ($P=0$), la población de depredadores se extingue exponencialmente.
 
 +++
 
@@ -48,9 +48,48 @@ $$
   \end{align*}
 $$
 
-#### Ejercicio análisis entrada/salida
 
-En esta representación del sistema, ¿cuáles les parece podrían que podrían ser las entradas y las salidas?
+Exiten numerosas herramientas para resolver este numéricamente este tipo de problema, conocido como *problema de valores iniciales*. En particular con Python lo podemos resover  utilizando el módulo `integrate`  del paquete `scipy`, que contiene la función `solve_ivp`. 
+
+```python
+from scipy.integrate import solve_ivp
+```
+
++++
+
+### Ejercicios:
+
+1. En esta representación del sistema, ¿cuáles les parece podrían que podrían ser las entradas y las salidas?
+2. Utilizando Python, resolver para el módelo anterior con las siguientes condiciones:
+   
+Modelo para zorros y conejos: $\alpha_1=0.15,\quad \alpha_2=0.04,\quad \alpha_3=0.04,\quad \alpha_4=0.3,\quad D(t_0)=10,\quad P(t_0)=10$.
+
+2. Escribir las ecuaciones que gobiernan el movimiento de una masa $m$ sujeta de un resorte de fuerza $f_k=kx(t)$, y que se le aplica una entrada fuerza $u(t)=f(t)$ y el rozamiento produce una fuerza $f_b=bv(t)$.
+
+```{figure} ./ejemplo_sis_mec.png
+:width: 450px
+:name: hipo-super
+:align: center
+
+Sistema masa-resorte
+```
+
+3. Expresarlas como un sistema de ecuaciones diferenciales de primer orden que solo dependen de variables del sistema sin derivar, es decir:
+
+$$\dot{\mathbf{x}}(t) = \mathbf{F}\left(\mathbf{x}(t), \mathbf{u}(t), t\right)$$
+
+donde:
+
+$$
+\mathbf{x}(t)=\begin{bmatrix}
+x_1(t)\\
+x_2(t)\\
+\vdots\\
+x_n(t)\\
+\end{bmatrix}
+$$
+
++++
 
 ## Caracterización de sistemas
 
@@ -229,7 +268,3 @@ Podemos notar que la respuesta del sistema siempre es una suma de funciones expo
 La principal herramienta para estudiar la composición armónica de una función no necesariamente periódica es la transformada de Fourier. Como las soluciones (respuesta) de nuestras ecuaciones (sistemas) son fundamentalmente funciones (señales) armónicas, es fácil entender la importancia del la transformada de Fourier.
 
 La desventaja de esta transformada es que "no captura" la información respecto a los transitorios, es decir respecto a las exponenciales. matemáticamente la solución a este problema se obtiene mediante la transformada de Laplace. Sin embargo, la gran ventaja de la transformada de Fourier de un sistema es que puede ser aproximada fácilmente a partir de muestras de la señal usando el algoritmo `fft`, mientras que la transformada de Laplace no tiene forma de obtenerse numéricamente a partir de muestras de la señal.
-
-```{code-cell} ipython3
-
-```
