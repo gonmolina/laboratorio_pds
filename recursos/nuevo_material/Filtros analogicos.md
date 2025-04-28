@@ -14,28 +14,28 @@ kernelspec:
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
-# FILTROS
+# Filtros analógicos
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
 ## Temario
 
-1. Transformada de Laplace
-2. Funciones transferencias
-3. Caracterización de los filtros
+<!-- 1. Transformada de Laplace
+2. Funciones transferencias -->
+1. Caracterización de los filtros
     1. Pasa-bajos
     2. Pasa-altos
     3. Pasa-banda
     4. Elimina-banda
     5. Pasa-todo
-4. Tipos de filtros con LTI. Butterworth, Chebyshev I y II, Elípticos (Cauer), Bessel
-5. Obtención de la función transferencia con SciPy  (`sicpy.signal`)
+2. Tipos de filtros con LTI. Butterworth, Chebyshev I y II, Elípticos (Cauer), Bessel
+3. Obtención de la función transferencia con SciPy  (`sicpy.signal`)
 6. Simulación del filtro en Python
-7. Presentación de herramienta web para diseño de filtros electrónicos activos: [Web Bench Filter Design Tool](https://webench.ti.com/filter-design-tool/).
+6. Presentación de herramienta web para diseño de filtros electrónicos activos: [Web Bench Filter Design Tool](https://webench.ti.com/filter-design-tool/).
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
-## Transformada de Laplace
+<!-- ## Transformada de Laplace
 
 Hasa el momento en la materia estuvimos trabajando con la transformada de Fourier.
 Vimos que a esta transformada la podemos pensar como la correlación de la señal que se desea transformar con senos y cosenos de diferentes frecuencias que hacemos variar entre $-\infty$ e $\infty$.
@@ -194,7 +194,7 @@ donde $X_{\delta}(s)$ es la transformada de Laplace de la salida del sistema cua
 
 Usando la tabla de propiedades, obtener la función transferencia del sistema si la salida es la velocidad $v(t)$
 
-+++ {"editable": true, "slideshow": {"slide_type": "slide"}}
++++ {"editable": true, "slideshow": {"slide_type": "slide"}} -->
 
 ## Filtros analógicos
 

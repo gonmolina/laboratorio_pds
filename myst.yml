@@ -1,6 +1,6 @@
 version: 1
 project:
-  title: Laboratorio de Procesamineto Digital de Señales
+  title: Laboratorio de Procesamiento Digital de Señales
   authors:
     - name: Somebody
   copyright: '2025'
@@ -10,7 +10,7 @@ project:
     - .DS_Store
     - '**.ipynb_checkpoints'
     - '**.ipynb'
-  github: github.com/gonmolina/laboratorio_pds
+  github: gonmolina/laboratorio_pds
   toc:
     - file: index.md
     - file: recursos/guia_instalacion_python.md
@@ -23,7 +23,7 @@ project:
     - file: recursos/laplace/transformada_laplace_python_opcional.md
     - file: recursos/laplace/funcion_transferencia.md
     - file: recursos/modulo_frec/respuesta_frecuencial.md
-
+    - file: recursos/nuevo_material/Filtros analogicos.md
     - file: recursos/nuevo_material/respuesta_sistemas_LTI_TD.md
     - file: recursos/cuadernos_clases/01-sampleo_tono_puro.md
 site:
