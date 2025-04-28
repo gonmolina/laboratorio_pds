@@ -35,10 +35,10 @@ jobs:
         with:
           node-version: 18.x
           # Install dependencies
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v5 
-        with:
-          python-version: 3.12
+      # - name: Set up Python 3.12
+      #   uses: actions/setup-python@v5 
+      #   with:
+      #     python-version: 3.12
       - uses: mamba-org/setup-micromamba@v2
         with:
           environment-file: environment.yml
