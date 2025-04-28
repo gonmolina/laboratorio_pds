@@ -34,11 +34,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18.x
-          # Install dependencies
-      # - name: Set up Python 3.12
-      #   uses: actions/setup-python@v5 
-      #   with:
-      #     python-version: 3.12
+
+      # Install dependencies
       - uses: mamba-org/setup-micromamba@v2
         with:
           environment-file: environment.yml
@@ -48,7 +45,7 @@ jobs:
           cache-environment: true
           post-cleanup: 'all'
 
-      - name: Install prbs generator package
+      - name: Install PRBS generator package
         run: pip install -i https://test.pypi.org/simple/ prbs-generator
 
       - name: Install MyST Markdown
