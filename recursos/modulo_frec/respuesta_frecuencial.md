@@ -38,13 +38,13 @@ $$
 u(t)= U_0 \sin(\omega t) \Longrightarrow U(s)=\dfrac{U_0\omega}{s^2+\omega^2}
 $$
 
-:::{figure-md} Figure_0_1.png 
+```{figure} Figure_0_1.png 
 :alt: Figure_0_1.png
 :width: 50%
 :name: figure_0_1
 
 Sistema $H(s)$
-:::
+```
 
 asumiendo condiciones iniciales nulas 
 
@@ -224,12 +224,13 @@ $$
 
 +++
 
-:::{figure-md} pzmap-polo-en-cero
-
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_1.png" width="600" alt="Figure_1.png">
+```{figure} Figure_1.png
+:width: 600
+:alt: "Figure_1.png"
+:align: center
 
 Polo en 0
-:::
+```
 
 
 el módulo resulta
@@ -252,12 +253,13 @@ $$
 
 +++
 
-:::{figure-md} bode-polo-en-cero
-
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_2.png" width="600" alt="Figure_2.png">
+```{figure} Figure_2.png
+:width: 600
+:alt: "Figure_2.png"
+:align: center
 
 Bode de $G(s)=\dfrac{1}{s}$
-:::
+```
 
 +++
 
@@ -271,12 +273,13 @@ $$
 
 +++
 
-:::{figure-md} pzmap-polo-multiple-en-cero
-
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_3.png" width="600" alt="Figure_3.png">
+```{figure} Figure_3.png 
+:width: 600
+:alt: Figure_3.png
+:align: center
 
 Polos de $G(s)$ en $s=0$ de multiplicidad $n$
-:::
+```
 
 el módulo resulta
 
@@ -302,12 +305,13 @@ $$
 
 +++
 
-:::{figure-md} bode-polo-multiple-0
-
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_4.png" width="600" alt="Figure_4.png">
+```{figure} Figure_4.png 
+:width: 600
+:alt: Figure_4.png
+:align: center
 
 Bode cuando n=2, es decir $G(s)=\dfrac{1}{s^2}$
-:::
+```
 
 +++
 
@@ -321,12 +325,13 @@ $$
 
 +++
 
-:::{figure-md} polo-real-negativo
-
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_5.png" width="600" alt="Figure_5.png">
+```{figure} Figure_5.png
+:width: 600
+:align: center
+:alt: Figure_5.png
 
 Polo de $G(s)$ en $s=-1/\tau$
-:::
+```
 
 el módulo resulta
 
@@ -368,11 +373,13 @@ $$
 
 +++
 
-:::{figure-md} bode-polo-real-simple
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_6.png" width="600" alt="Figure_6.png">
+```{figure} Figure_6.png 
+:width: 600
+:alt: Figure_6.png
+:align: center
 
 Bode de $G(s)=\dfrac{1}{\tau s+1}$ con $\tau=1$
-:::
+```
 
 +++
 
@@ -386,12 +393,13 @@ donde $\xi$ es el coeficiente de amortiguamiento, $\omega_n$ es la frecuencia na
 
 +++
 
-:::{figure-md} polos-complejos-map
-
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_7.png" width="500" alt="Figure_7.png">
+```{figure} Figure_7.png 
+:width: 500
+:alt: Figure_7.png
+:align: center
 
 Polo complejos conjugados de $G(s)$ con $\omega_n=1$ y $\xi=0.5$
-:::
+```
 
 $$
 H(\omega)= G(j\omega)= \dfrac{\omega_n^2}{-\omega_n^2+j2\xi\omega_n\omega+\omega_n^2} =\dfrac{1}{\big(1-\dfrac{\omega^2}{\omega_n^2}\big)+j2\xi\dfrac{\omega}{\omega_n}} 
@@ -444,12 +452,13 @@ $$
 
 +++
 
-:::{figure-md} polos-complejos-bode
-
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_8.png" width="700" alt="Figure_8.png">
+```{figure} Figure_8.png 
+:width: 700
+:align: center
+:alt: Figure_8.png
 
 Bode de $G(s)$ con $\omega_n=1$ y $\xi= 0.9,0.7,0.5,0.3,0.1,0.01$
-:::
+```
 
 +++
 
@@ -463,13 +472,13 @@ $$
 
 +++
 
-:::{figure-md} cero-en-cero-map
-
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_9.png" width="500" alt="Figure_9.png">
+```{figure} Figure_9.png 
+:width: 500
+:alt: Figure_9.png
+:align: center
 
 Cero de $G(s)$ en $s=0$
-
-:::
+```
 
 el módulo resulta
 
@@ -487,30 +496,32 @@ la fase $\angle{G(j\omega)} = \dfrac{\pi}{2} ~\forall~ \omega$
 
 +++
 
-:::{figure-md} cero-en-cero-bode
-
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_10.png" width="700" alt="Figure_10.png">
+```{figure} Figure_10.png 
+:width: 700
+:alt: Figure_10.png
+:align: center
 
 Bode de $G(s)={s}$
+```
 
-:::
 
 +++
 
 ### 6) Ceros múltiples en el origen
 
 $$
-G(s)={s^n} & G(j\omega)= {j^n\omega^n} & \text{n ceros en} & s=0
+G(s)={s^n} & G(j\omega)= {j^n\omega^n} & \text{n ceros en } & s=0
 $$
 
 +++
 
-:::{figure-md} ceros-en-ceros-map
-
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_11.png" width="500" alt="Figure_11.png">
+```{figure} Figure_11.png 
+:width: 500
+:alt: Figure_11.png
+:align: center
 
 Ceros de $G(s)$ en $s=0$ de multiplicidad n
-:::
+```
 
 el módulo resulta
 
@@ -532,12 +543,13 @@ $$
 
 +++
 
-:::{figure-md} ceros-en-cero-bode
-
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_12.png" width="700" alt="Figure_12.png">
+```{figure} Figure_12.png 
+:width: 700
+:alt: Figure_12.png
+:align: center
 
 Bode cuando n=2, es decir $G(s)={s^2}$
-:::
+```
 
 +++
 
@@ -545,18 +557,19 @@ Bode cuando n=2, es decir $G(s)={s^2}$
 
 $$
 \begin{matrix}
-G(s)={\tau s+1} & H(\omega)= G(j\omega)= {j\omega\tau+1} & \text{un cero en} & s=-\dfrac{1}{\tau}
+G(s)={\tau s+1} & H(\omega)= G(j\omega)= {j\omega\tau+1} & \text{ un cero en } & s=-\dfrac{1}{\tau}
 \end{matrix}
 $$
 
 +++
 
-:::{figure-md} cero-real-simple-map
-
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_13.png" width="500" alt="Figure_13.png">
+```{figure} Figure_13.png 
+:width: 500
+:alt: Figure_13.png
+:align: center
 
 Cero de $G(s)$ en $s=-1/\tau$
-:::
+```
 
 el módulo resulta
 
@@ -600,12 +613,13 @@ $$
 
 +++
 
-:::{figure-md} cero-real-simple-bode
-
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_14.png" width="700" alt="Figure_14.png">
+```{figure} Figure_14.png 
+:width: 700
+:alt: Figure_14.png
+:align: center
 
 Bode de $G(s)={\tau s+1}$ con $\tau=1$
-:::
+```
 
 +++
 
@@ -618,12 +632,13 @@ $$
 
 +++
 
-:::{figure-md} cero-complejo-conjugado-bode
-
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_15.png" width="700" alt="Figure_15.png">
+```{figure} Figure_15.png
+:width: 500
+:alt: Figure_15.png
+:align: center
 
 Bode de $G(s)$ con $\omega_n=1$ y $\xi= 0.9,0.7,0.5,0.3,0.1,0.01$
-:::
+```
 
 +++
 
@@ -637,12 +652,13 @@ $$
 
 +++
 
-:::{figure-md} cero-simple-positivo
-
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_16.png" width="500" alt="Figure_16.png">
+```{figure} Figure_16.png 
+:width: 500
+:alt: Figure_16.png
+:align: center
 
 Cero de $G(s)$ en $s=1/\tau$, en $\mathbb{C}^+$
-:::
+```
 
 el módulo resulta
 
@@ -686,13 +702,13 @@ $$
 
 +++
 
-:::{figure-md} cero-real-positivo-bode
-
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_17.png" width="700" alt="Figure_17.png">
+```{figure} Figure_17.png 
+:width: 700
+:alt: Figure_17.png
+:align: center
 
 Bode de $G(s)={1-\tau s}$ con $\tau=1$
-
-:::
+```
 
 +++
 
@@ -775,11 +791,13 @@ $$
 
 7. step) dibujar asíntotas, en verde la asintotas con una recta en +/- media decada. 
 
-:::{figure-md}
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_22.png" width="700" alt="Figure_22.png">
+```{figure} Figure_22.png
+:width: 700
+:alt: Figure_22.png
+:align: center
 
 Bode asintótico
-:::
+```
 
 +++
 
@@ -797,9 +815,10 @@ $$
 \underbrace{|G(j\omega)|_{\omega=\omega_c}=5\dfrac{|\dfrac{1}{2}j\omega+1|}{|j\omega+1||10j\omega+1|}=1}_{\omega_c = 0.456 rad/s}
 $$
 
-:::{figure}
-
-<img style="display:block; margin-left: auto; margin-right: auto;" src="Figure_23.png" width="700" alt="Figure_23.png">
+```{figure} Figure_23.png 
+:width: 700
+:alt: Figure_23.png
+:align: center
 
 Bode asintótico de $G(s)$
-:::
+```

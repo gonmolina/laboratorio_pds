@@ -1,0 +1,37 @@
+version: 1
+project:
+  title: Laboratorio de Procesamineto Digital de Señales
+  authors:
+    - name: Somebody
+  copyright: '2025'
+  exclude:
+    - _build
+    - Thumbs.db
+    - .DS_Store
+    - '**.ipynb_checkpoints'
+    - '**.ipynb'
+  github: github.com/gonmolina/laboratorio_pds
+  toc:
+    - file: index.md
+    - file: recursos/guia_instalacion_python.md
+    - file: recursos/nuevo_material/senales_discretas.md
+    - file: recursos/nuevo_material/correlacion.md
+    - file: recursos/nuevo_material/ejemplo_radar.md
+    - file: recursos/nuevo_material/analisis_frecuencial_en_tiempo_discreto.md
+    - file: recursos/nuevo_material/welch_teoria.md
+    - file: recursos/nuevo_material/diapo_sistemas/diapoSistemas.md
+    - file: recursos/laplace/transformada_laplace_python_opcional.md
+    - file: recursos/laplace/funcion_transferencia.md
+    - file: recursos/modulo_frec/respuesta_frecuencial.md
+
+    - file: recursos/nuevo_material/respuesta_sistemas_LTI_TD.md
+    - file: recursos/cuadernos_clases/01-sampleo_tono_puro.md
+site:
+  title: Laboratorio de Procesamiento Digital de Señales
+  options:
+    logo: 'logo.png'
+    favicon: 'logo.png'
+    analytics_google: ''
+    analytics_plausible: ''
+    folders: true
+  template: book-theme

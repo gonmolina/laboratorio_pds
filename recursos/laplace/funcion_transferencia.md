@@ -44,7 +44,7 @@ Notar que con esta definición, lo que se transforma al dominio de Laplace son l
 La función transferencia de un sistema se puede obtener de varias formas:
 
 1. Aplicando la definición, es decir, aplicando $u(t)$ para medir $y(t)$, transformar ambas señales al dominio de Laplace y luego obtener $H(s)=\dfrac{Y(s)}{U(s)}$. Esto no es práctico.
-1. Aplicar un impulso $u(t)=\rho(t)$ y hacer las transformada de Laplace de la respuesta. Es un caso particular del método anterior haciendo que $U(s)=1$.
+1. Aplicar un impulso $u(t)=\delta(t)$ y hacer las transformada de Laplace de la respuesta. Es un caso particular del método anterior haciendo que $U(s)=1$.
 1. A partir de las ecuaciones temporales que dominan la dinámica del sistema se resuelve $\dfrac{Y(s)}{U(s)}$. Esta es la forma en que por lo general se obtienen las funciones transferencias de los sistemas en forma analítica.
 
 
@@ -54,6 +54,7 @@ La función transferencia de un sistema se puede obtener de varias formas:
 En general los sistemas dinámicos en el dominio temporal se describen matemáticamente a partir de ecuaciones diferenciales. 
 Es importante notar, que en el dominio transformado de Laplace estas ecuaciones diferenciales se transforman en ecuaciones algebraicas, resultando en un tratamiento matemático más sencillo.
 ```
+
 +++
 
 ## Ejemplo: Sistema electromecánico (motor eléctrico)
@@ -107,7 +108,3 @@ finalmente si consideramos que $E_a=0$, hallamos la FT desde la entrada de pertu
 $$
 \frac{\Theta_m(s)} {T_r(s)}  =- \frac{\left(s+ \frac{ R_a}{L_a}\right)\frac{1}{K_t} }{\left(s+ \frac{ R_a}{L_a}\right)\frac{J_m}{K_t}\left(s^2+ \frac{D_m}{J_m}s\right)+\frac{K_b}{L_a} s}
 $$
-
-+++ {"slideshow": {"slide_type": "slide"}}
-
-
