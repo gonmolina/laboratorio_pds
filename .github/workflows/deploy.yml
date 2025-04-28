@@ -39,10 +39,14 @@ jobs:
         uses: actions/setup-python@v5 
         with:
           python-version: 3.12
-      
-      - name: Install dependencies
-        run: |
-          $CONDA/bin/conda env update --file environment.yml --name base
+      - uses: mamba-org/setup-micromamba@v2
+        with:
+          environment-file: environment.yml
+          init-shell: >-
+            bash
+            powershell
+          cache-environment: true
+          post-cleanup: 'all'
 
       - name: Install prbs generator package
         run: pip install -i https://test.pypi.org/simple/ prbs-generator
