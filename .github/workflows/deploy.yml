@@ -5,7 +5,7 @@ name: MyST GitHub Pages Deploy
 on:
   push:
     # Runs on pushes targeting the default branch
-    branches: [gh-pages]
+    branches: [main]
 env:
   # `BASE_URL` determines the website is served from, including CSS & JS assets
   # You may need to change this to `BASE_URL: ''`
@@ -34,10 +34,25 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18.x
+          # Install dependencies
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5 
+        with:
+          python-version: 3.12
+      
+      - name: Install dependencies
+        run: |
+          $CONDA/bin/conda env update --file environment.yml --name base
+
+      - name: Install prbs generator package
+        run: pip install -i https://test.pypi.org/simple/ prbs-generator
+
       - name: Install MyST Markdown
         run: npm install -g mystmd
+
       - name: Build HTML Assets
-        run: myst build --html
+        run: $CONDA/bin/myst build --html --execute
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

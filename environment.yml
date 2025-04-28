@@ -1,0 +1,21 @@
+name: book
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - slycot
+  - control
+  - sympy
+  - tornado
+  - jupyterlab
+  - ipython
+  - pip
+  - ipympl
+  - jupytext
+  - libsqlit
+  - mystmd
+   
