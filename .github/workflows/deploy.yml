@@ -55,7 +55,8 @@ jobs:
         run: npm install -g mystmd
 
       - name: Build HTML Assets
-        run: $CONDA/bin/myst build --html --execute
+        run: myst build --html --execute
+        shell: micromamba-shell {0}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
