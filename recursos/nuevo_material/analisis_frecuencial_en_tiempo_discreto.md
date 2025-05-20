@@ -55,7 +55,7 @@ $$
 
 +++ {"editable": true, "slideshow": {"slide_type": "subslide"}}
 
-Reemplazando en [](eq1), tenemos:
+Reemplazando en [](#eq1), tenemos:
 
 $$x(n)e^{-j\frac{2\pi ln}{N}}=\sum_{k=0}^{N-1}c_ke^{j\frac{2\pi (k-l)n}{N}}$$
 

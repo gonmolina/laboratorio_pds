@@ -18,6 +18,7 @@ project:
     - file: recursos/nuevo_material/correlacion.md
     - file: recursos/nuevo_material/ejemplo_radar.md
     - file: recursos/nuevo_material/analisis_frecuencial_en_tiempo_discreto.md
+    - file: recursos/nuevo_material/transf_fourier_discreta.md
     - file: recursos/nuevo_material/welch_teoria.md
     - file: recursos/nuevo_material/diapo_sistemas/diapoSistemas.md
     - file: recursos/laplace/transformada_laplace_python_opcional.md
