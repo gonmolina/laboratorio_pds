@@ -257,7 +257,7 @@ Si consideramos en cambio $L = 100$, las líneas espectrales son distinguibles.
 +++ {"editable": true, "slideshow": {"slide_type": "subslide"}}
 
 Para solucionar el problema del *leakage* se propone utilizar una ventana que tenga un espectro que se asemeje en mayor medida al impulso. 
-Por ejemplo si consideramos la **ventana de Hann** (`hanning`):
+Por ejemplo si consideramos la **ventana de Hann** (`hann`):
 
 $$
 w(n)=\left\{
@@ -275,7 +275,7 @@ El espectro de módulo tiene las siguientes características:
 
 +++ {"editable": true, "slideshow": {"slide_type": "subslide"}}
 
-Considerando el ejemplo con las tres componentes senoidales, pero usando una ventana Hann con los mismos valores de $L$jjj, los espectros resultan:
+Considerando el ejemplo con las tres componentes senoidales, pero usando una ventana Hann con los mismos valores de $L$, los espectros resultan:
 
 $$
 w(n)=\left\{
@@ -285,7 +285,24 @@ w(n)=\left\{
    \end{array}
   \right.
 $$
- PONER FIGURAS DE LA VENTANA DE HANN
+
+```{code-cell}
+:tags: [remove-input]
+
+import numpy as np
+from scipy.fft import fftshift, fftfreq
+from scipy.signal.windows import hann, hamming
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+L=50
+whann=hann(L)
+plt.plot(whann)
+plt.title("Ventana de Hann")
+plt.xlabel("n")
+plt.ylabel("w(n)")
+plt.grid(True)
+```
 
 +++ {"editable": true, "slideshow": {"slide_type": "subslide"}}
 
@@ -300,7 +317,18 @@ w(n)=\left\{
    \end{array}
   \right.
 $$
- PONER FIGURAS DE LA VENTANA DE HAMMING
+
+```{code-cell}
+:tags: [remove-input]
+
+L=50
+whamming=hamming(L)
+plt.plot(whamming)
+plt.title("Ventana de Hamming")
+plt.xlabel("n")
+plt.ylabel("w(n)")
+plt.grid(True)
+```
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
@@ -476,6 +504,8 @@ Xl3,_=dtft(xl3,N)
 ```
 
 ```{code-cell}
+:tags: [hide-input]
+
 f, ax=plt.subplots(1,1, figsize=(6,3))
 ax.plot(winf, np.abs(X1), label=r"$L=\infty$")
 ax.plot(winf, np.abs(fftshift(Xl1)),  label=r"$L=10$")
@@ -668,7 +698,10 @@ slideshow:
 Fsen=F[ind]; # frecuencia de la senoide
 f, ax = plt.subplots(2,1, figsize=(6,4))
 ax[0].plot(t,y)
+ax[0].set_xlabel("Tiempo (s)")
 ax[1].plot(fftshift(F),fftshift(absY))
+ax[1].set_xlabel("Frecuencia (Hz)")
+f.tight_layout()
 
 print(f"Frecuencia del seno: {Fsen}, amplitud del seno: {A}")
 ```
@@ -694,8 +727,11 @@ yfiltrada=yfiltrada[0:L]
 f, ax=plt.subplots(2,1, figsize=(6,4))
 ax[0].plot(fftshift(F),abs(fftshift(Yfiltrada)))
 ax[0].plot(fftshift(F),5000*fftshift(filtro))
+ax[0].set_xlabel("Tiempo (s)")
 ax[1].set_xlim([0.99, 1.01])
 ax[1].plot(t,yfiltrada)
+ax[1].set_xlabel("Frecuencia (Hz)")
+f.tight_layout()
 ```
 
 +++ {"slideshow": {"slide_type": "slide"}}
